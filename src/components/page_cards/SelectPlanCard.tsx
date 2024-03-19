@@ -42,6 +42,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
 
     console.log(chosenPlan);
 
+
     return (
         <div className="stepcard_container">
             <h1>{title}</h1>
@@ -90,14 +91,6 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
 
 
             </div>
-
-            {/* test the chosen plan */}
-            {/* <div style={{ textAlign: 'center', fontSize: "16px", border: "1px solid black", padding: "10px", margin: "10px" }} >
-                <span>chosen plan: {chosenPlan.title}</span>
-                <span>price:  {chosenPlan.price}</span>
-                <span>description {chosenPlan.description}</span>
-            </div> */}
-
 
             <div className="plan_toggle">
                 <p>{monthly}</p>
