@@ -45,7 +45,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
     return (
         <div className="stepcard_container">
             <h1>{title}</h1>
-            <h2>{subtitle}</h2>
+            <p>{subtitle}</p>
 
             <div className='plan_container'>
 
@@ -92,16 +92,15 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
             </div>
 
             {/* test the chosen plan */}
-            <div style={{ textAlign: 'center', fontSize: "16px", border: "1px solid black", padding: "10px", margin: "10px" }} >
+            {/* <div style={{ textAlign: 'center', fontSize: "16px", border: "1px solid black", padding: "10px", margin: "10px" }} >
                 <span>chosen plan: {chosenPlan.title}</span>
                 <span>price:  {chosenPlan.price}</span>
                 <span>description {chosenPlan.description}</span>
-            </div>
+            </div> */}
 
 
             <div className="plan_toggle">
                 <p>{monthly}</p>
-
                 <label className="switch">
                     <input type="checkbox" onClick={handleTogglePlan} />
                     <span className="slider round"></span>

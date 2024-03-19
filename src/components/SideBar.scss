@@ -61,7 +61,50 @@
     .stepcard_container {
         width: 600px;
         height: 568px;
-        background-color: rgb(122, 83, 83);
+        // background-color: rgb(122, 83, 83);
         border-radius: 9px;
+        padding: 3em;
+
+        h1 {
+            color: $primaryMarineBlue;
+            font-weight: 700;
+        }
+
+        p {
+            color: $neutralCoolGray;
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            //first anchor tag
+            a:nth-child(1) {
+                text-decoration: none;
+                color: $neutralCoolGray;
+                font-weight: 400;
+
+                &:hover {
+                    color: $primaryMarineBlue;
+                    //smooth transition
+                    transition: 0.5s;
+                }
+            }
+
+            a:nth-child(2) {
+                text-decoration: none;
+                color: $neutralCoolGray;
+                font-weight: 400;
+                //smooth transition
+                transition: 0.5s;
+                background-color: $primaryMarineBlue;
+                color: $neutralWhite;
+                padding: 10px 20px;
+                border-radius: 5px;
+            }
+
+        }
     }
 }
