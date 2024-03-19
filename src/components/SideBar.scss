@@ -16,7 +16,7 @@
 
         //center vertically
         .step_container {
-            padding: 20px;
+            padding: 30px;
 
             .step_card {
                 display: flex;
@@ -28,8 +28,8 @@
                 .step_number {
                     border: 1px solid $neutralAlabaster;
                     border-radius: 50%;
-                    width: 50px;
-                    height: 50px;
+                    width: 35px;
+                    height: 35px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -46,8 +46,14 @@
 
                     //only first paragraph
                     p:nth-child(1) {
+                        font-size: smaller;
                         font-weight: 400;
                         color: $neutralCoolGray;
+                    }
+
+                    h3 {
+                        font-weight: 700;
+                        font-size: smaller;
                     }
 
                 }
@@ -61,9 +67,10 @@
     .stepcard_container {
         width: 600px;
         height: 568px;
-        // background-color: rgb(122, 83, 83);
         border-radius: 9px;
         padding: 3em;
+        overflow: hidden;
+
 
         h1 {
             color: $primaryMarineBlue;

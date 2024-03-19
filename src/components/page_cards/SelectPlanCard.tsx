@@ -84,6 +84,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                             <div className="plan_description">
                                 <h3>{plan.title}</h3>
                                 <p>{plan.price}</p>
+                                <p>{plan.description}</p>
                             </div>
                         </div>
                     ))

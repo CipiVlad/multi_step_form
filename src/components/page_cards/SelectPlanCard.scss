@@ -13,8 +13,8 @@
         border-radius: 8px;
         padding: 20px;
         //fix width and height for plan_card
-        width: 135px;
-        height: 170px;
+        width: 155px;
+        height: 205px;
         cursor: pointer;
         //remove scrollbar
         overflow: hidden;
@@ -23,6 +23,18 @@
             color: $primaryMarineBlue;
             font-weight: 700;
         }
+
+        //second p in .plan_description
+        .plan_description p:nth-child(2) {
+            color: $neutralCoolGray;
+            font-weight: 400;
+        }
+
+        .plan_description p:nth-child(3) {
+            color: $primaryMarineBlue;
+            font-weight: 400;
+        }
+
     }
 
     .active {
