@@ -1,13 +1,16 @@
 @import '/src/sass/_variable.scss';
 
+
 * {
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
     overflow-x: hidden;
-    max-width: 1440px;
+    // max-width: 1440px;
     font-family: $fontFamily;
 }
+
+
 
 body {
 
