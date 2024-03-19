@@ -1,0 +1,35 @@
+@import '/src/sass/_variable.scss';
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+    max-width: 1440px;
+    font-family: $fontFamily;
+}
+
+body {
+
+    p {
+        font-size: $font-size-paragraph;
+    }
+
+
+    .App {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: $neutralAlabaster;
+
+        .frame_container {
+            background-color: $neutralWhite;
+            width: 950px;
+            height: 608px;
+            border-radius: 9px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+}
