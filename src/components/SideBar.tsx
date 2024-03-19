@@ -1,36 +1,14 @@
 import './SideBar.scss'
+import { steps } from '../data/steps.module'
+import StepCardContainer from './page_cards/PersonalInfoCard'
+
 const SideBar = () => {
-
-    const steps = [
-        {
-            "id": "1",
-            "step": "STEP 1",
-            "title": "YOUR INFO"
-        },
-        {
-            "id": "2",
-            "step": "STEP 2",
-            "title": "SELECT PLAN"
-        },
-        {
-            "id": "3",
-            "step": "STEP 3",
-            "title": "ADD-ONS"
-        },
-        {
-            "id": "4",
-            "step": "STEP 4",
-            "title": "SUMMARY"
-        }]
-
-
     return (
-        <div className="sidebar">
+        <>
             <div className='sidebar_image'>
                 <div className="step_container">
-
                     {steps.map((step) => (
-                        <div className="step_card">
+                        <div className="step_card" key={step.id}>
                             <div className="step_number">
                                 <span>{step.id}</span>
                             </div>
@@ -42,8 +20,8 @@ const SideBar = () => {
                     ))}
                 </div>
             </div>
-            <div className="stepcard_container"></div>
-        </div>
+        </>
+
     )
 }
 export default SideBar
