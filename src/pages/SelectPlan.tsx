@@ -6,10 +6,10 @@ const SelectPlan = () => {
     return (
         <>
             <SideBar
-                title={selectPlan.title}
-                subtitle={selectPlan.subtitle}
-                back={selectPlan.back}
-                nextStep={selectPlan.nextStep}
+            // title={selectPlan.title}
+            // subtitle={selectPlan.subtitle}
+            // back={selectPlan.back}
+            // nextStep={selectPlan.nextStep}
             />
 
             <SelectPlanCard

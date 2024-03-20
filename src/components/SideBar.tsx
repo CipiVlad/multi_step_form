@@ -1,6 +1,6 @@
 import './SideBar.scss'
 import { steps } from '../data/steps.module'
-import StepCardContainer from './page_cards/PersonalInfoCard'
+// import StepCardContainer from './page_cards/PersonalInfoCard'
 
 const SideBar = () => {
     return (
