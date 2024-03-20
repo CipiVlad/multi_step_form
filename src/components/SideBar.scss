@@ -72,9 +72,14 @@
         overflow: hidden;
 
 
-        h1 {
+        .title {
             color: $primaryMarineBlue;
             font-weight: 700;
+        }
+
+        .subtitle {
+            color: $neutralCoolGray;
+            font-weight: 400;
         }
 
 

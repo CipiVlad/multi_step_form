@@ -45,8 +45,8 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
 
     return (
         <div className="stepcard_container">
-            <h1>{title}</h1>
-            <p>{subtitle}</p>
+            <h1 className='title'>{title}</h1>
+            <p className='subtitle'>{subtitle}</p>
 
             <div className='plan_container'>
 
