@@ -77,10 +77,6 @@
             font-weight: 700;
         }
 
-        p {
-            color: $neutralCoolGray;
-            font-weight: 400;
-        }
 
         nav {
             display: flex;
@@ -95,6 +91,7 @@
 
                 &:hover {
                     color: $primaryMarineBlue;
+                    font-weight: 500;
                     //smooth transition
                     transition: 0.5s;
                 }
@@ -110,6 +107,10 @@
                 color: $neutralWhite;
                 padding: 10px 20px;
                 border-radius: 5px;
+
+                &:hover {
+                    background-color: $primaryPurplishBlue;
+                }
             }
 
         }

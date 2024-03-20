@@ -17,7 +17,6 @@ type Props = {
 const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons }: Props) => {
     const [activeIndex, setActiveIndex] = useState(null || 0);
     const [togglePlan, setTogglePlan] = useState(true);
-
     const [chosenPlan, setChosenPlan] = useState({})
 
     const toggleActiveClass = (index) => {
@@ -29,7 +28,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
     }
 
     useEffect(() => {
-        //write a function to get the selected plan
+        //write get the selected plan
 
         if (!togglePlan) {
             setChosenPlan(planYearly[activeIndex])
@@ -39,6 +38,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
 
 
     }, [activeIndex, togglePlan]);
+
 
     console.log(chosenPlan);
 
@@ -94,12 +94,17 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
             </div>
 
             <div className="plan_toggle">
-                <p>{monthly}</p>
+
+                <p
+                    className={`${togglePlan ? ' active' : ' inactive'}`}
+                >{monthly}</p>
                 <label className="switch">
                     <input type="checkbox" onClick={handleTogglePlan} />
                     <span className="slider round"></span>
                 </label>
-                <p>{yearly}</p>
+                <p
+                    className={`${togglePlan ? ' inactive' : ' active'}`}
+                >{yearly}</p>
             </div>
             <nav>
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
