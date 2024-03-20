@@ -1,0 +1,32 @@
+@import '../../sass/_variable.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 2em 0;
+
+    input {
+        font-size: $font-size-paragraph;
+        color: $primaryMarineBlue;
+        border: $neutralLightGray 1px solid;
+        border-radius: 5px;
+        padding: 15px;
+    }
+
+    input:focus {
+        outline: none;
+        border: $primaryPurplishBlue 1px solid;
+        font-size: $font-size-paragraph;
+    }
+
+    input::placeholder {
+        font-weight: 500;
+        color: $neutralCoolGray;
+    }
+}
+
+label {
+    font-size: small;
+    color: $primaryMarineBlue;
+}

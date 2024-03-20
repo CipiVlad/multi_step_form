@@ -106,7 +106,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                     className={`${togglePlan ? ' inactive' : ' active'}`}
                 >{yearly}</p>
             </div>
-            <nav>
+            <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
                 <Link to={`${nextStep}`} className="btn">Next Step</Link>
             </nav>
