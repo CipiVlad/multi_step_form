@@ -64,13 +64,31 @@
         }
     }
 
+    @media (min-width: 1441px) and (max-width: 1920px) {
+        .stepcard_container {
+            width: 600px;
+            height: 568px;
+            border-radius: 9px;
+            // padding: 3em;
+            overflow: hidden;
+        }
+
+    }
+
+    @media screen and (max-width: 1440px) {
+        .stepcard_container {
+            background-color: red;
+            width: 600px;
+            height: 568px;
+            border-radius: 9px;
+            // padding: 3em;
+            overflow: hidden;
+
+        }
+    }
 
     .stepcard_container {
-        width: 600px;
-        height: 568px;
-        border-radius: 9px;
-        padding: 3em;
-        overflow: hidden;
+
 
 
         .title {
