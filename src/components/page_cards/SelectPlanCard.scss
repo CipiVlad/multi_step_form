@@ -43,6 +43,11 @@
     }
 }
 
+.plan_card:hover {
+    border: 1px solid $primaryPurplishBlue;
+    background-color: $neutralMagnolia;
+}
+
 .plan_toggle {
     display: flex;
     justify-content: center;

@@ -1,5 +1,6 @@
 @import '../sass/_variable.scss';
 
+
 .main_container {
     display: flex;
     justify-content: center;
@@ -88,9 +89,6 @@
     }
 
     .stepcard_container {
-
-
-
         .title {
             color: $primaryMarineBlue;
             font-weight: 700;

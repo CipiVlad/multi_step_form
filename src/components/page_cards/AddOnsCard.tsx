@@ -13,8 +13,14 @@ type Props = {
     back: string
 }
 
-const AddOnsCard = ({ title, subtitle, add_ons, name, description, price, nextStep, back }: Props) => {
+const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
 
+    const handleNext = (e) => {
+        e.preventDefault()
+        const { name, value } = e.target
+        console.log(name)
+        console.log(value)
+    }
 
 
     return (
@@ -23,7 +29,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, name, description, price, nextSt
             <p className='subtitle'>{subtitle}</p>
 
             {
-                add_ons.map((add_on, index) => (
+                add_ons.map((add_on) => (
                     <div className="add_ons_card" key={add_on.name}>
                         <input
                             type="checkbox"
