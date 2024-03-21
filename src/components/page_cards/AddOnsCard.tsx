@@ -15,6 +15,9 @@ type Props = {
 
 const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
 
+    //handle checkbox state
+    const [inputState, setInputState] = useState(false)
+
     const handleNext = (e) => {
         e.preventDefault()
         const { name, value } = e.target
@@ -23,18 +26,34 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
     }
 
 
+    //if inputState is true add class to add_ons_card to change background 
+    //write an onChange function to toggle inputState and add class only to checked input
+
+    const handleChange = (e) => {
+        const { checked } = e.target
+        setInputState(checked)
+    }
+
+
+
+
+
+
     return (
         <div className="stepcard_container">
             <h1 className='title'>{title}</h1>
             <p className='subtitle'>{subtitle}</p>
 
             {
-                add_ons.map((add_on) => (
-                    <div className="add_ons_card" key={add_on.name}>
+                add_ons.map((add_on, index) => (
+                    <div className={`${inputState ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
+
                         <input
+                            key={add_on.name}
                             type="checkbox"
                             name={add_on.name}
                             id={add_on.name}
+                            onChange={handleChange}
                         />
                         <label htmlFor={add_on.name}>
                             <p>{add_on.name}</p>
