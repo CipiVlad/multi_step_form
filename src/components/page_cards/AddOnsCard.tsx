@@ -16,28 +16,15 @@ type Props = {
 const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
 
     //handle checkbox state
-    const [inputState, setInputState] = useState(false)
+    const [inputState, setInputState] = useState([false, false, false])
 
-    const handleNext = (e) => {
-        e.preventDefault()
-        const { name, value } = e.target
-        console.log(name)
-        console.log(value)
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        const { checked } = e.target;
+        // Find the index of the checked checkbox and update the corresponding value in the state array
+        setInputState(prev => prev.map((item, index) => index === inputState.indexOf(item) ? checked : item));
+
     }
-
-
-    //if inputState is true add class to add_ons_card to change background 
-    //write an onChange function to toggle inputState and add class only to checked input
-
-    const handleChange = (e) => {
-        const { checked } = e.target
-        setInputState(checked)
-    }
-
-
-
-
-
 
     return (
         <div className="stepcard_container">
@@ -45,15 +32,15 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
             <p className='subtitle'>{subtitle}</p>
 
             {
-                add_ons.map((add_on, index) => (
-                    <div className={`${inputState ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
+                add_ons.map((add_on, index: number) => (
+                    <div className={`${inputState[index] ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
 
+                        {/* <div className="add_ons_card" key={index}> */}
                         <input
-                            key={add_on.name}
                             type="checkbox"
-                            name={add_on.name}
-                            id={add_on.name}
                             onChange={handleChange}
+                            checked={inputState[index]}
+                            id={add_on.name}
                         />
                         <label htmlFor={add_on.name}>
                             <p>{add_on.name}</p>

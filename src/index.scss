@@ -1,6 +1,5 @@
 @import '/src/sass/_variable.scss';
 
-
 * {
     padding: 0;
     margin: 0;
@@ -11,14 +10,11 @@
     font-family: $fontFamily;
 }
 
-
-
 body {
 
     p {
         font-size: $font-size-paragraph;
     }
-
 
     .App {
         display: flex;
