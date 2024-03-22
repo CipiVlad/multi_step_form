@@ -1,6 +1,6 @@
 import SideBar from "../components/SideBar"
 import AddOnsCard from "../components/page_cards/AddOnsCard"
-import { addOns } from "../data/addOns.module"
+import { addOnsData } from "../data/addOns.module"
 
 const AddOns = () => {
     return (
@@ -8,14 +8,14 @@ const AddOns = () => {
             <SideBar />
 
             <AddOnsCard
-                title={addOns.title}
-                subtitle={addOns.subtitle}
-                add_ons={addOns.add_ons}
-                name={addOns.add_ons[0].name}
-                description={addOns.add_ons[0].description}
-                price={addOns.add_ons[0].price}
-                nextStep={addOns.nextStep}
-                back={addOns.back}
+                title={addOnsData.title}
+                subtitle={addOnsData.subtitle}
+                add_ons={addOnsData.add_ons}
+                name={addOnsData.add_ons[0].name}
+                description={addOnsData.add_ons[0].description}
+                price={addOnsData.add_ons[0].price}
+                nextStep={addOnsData.nextStep}
+                back={addOnsData.back}
             />
 
         </>)
