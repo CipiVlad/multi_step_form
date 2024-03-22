@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import './PersonalInfoCard.scss'
 import { useState } from "react"
+
+
 type Props = {
     title: string
     subtitle: string
@@ -45,7 +47,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back }: Props) => {
                     </form>
                     <nav className="navBar">
                         <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                        <Link to={`${nextStep}`} className="btn" >Next Step</Link>
+                        <Link to={`${nextStep}`} className="btn">Next Step</Link>
                     </nav>
                 </div>
 

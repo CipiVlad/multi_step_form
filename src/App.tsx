@@ -7,21 +7,30 @@ import SelectPlan from './pages/SelectPlan'
 import AddOns from './pages/AddOns'
 import Finish from './pages/Finish'
 
+
+
+let sum: any = []
+export const StepContext = React.createContext(sum)
+
 function App() {
 
+
+
   return (
-    <div className="App">
-      <div className="frame_container">
-        <div className="main_container">
-          <Routes>
-            <Route path="/" element={<PersonalInfo />} />
-            <Route path="/select-plan" element={<SelectPlan />} />
-            <Route path="/add-ons" element={<AddOns />} />
-            <Route path="/finish" element={<Finish />} />
-          </Routes>
+    <StepContext.Provider value={sum}>
+      <div className="App">
+        <div className="frame_container">
+          <div className="main_container">
+            <Routes>
+              <Route path="/" element={<PersonalInfo />} />
+              <Route path="/select-plan" element={<SelectPlan />} />
+              <Route path="/add-ons" element={<AddOns />} />
+              <Route path="/finish" element={<Finish />} />
+            </Routes>
+          </div>
         </div>
       </div>
-    </div>
+    </StepContext.Provider>
   )
 }
 

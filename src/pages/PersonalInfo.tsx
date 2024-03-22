@@ -5,7 +5,6 @@ import { personalInfo } from "../data/personalInfo.module"
 import PersonalInfoCard from "../components/page_cards/PersonalInfoCard"
 
 const PersonalInfo = () => {
-
     return (
         <>
             <SideBar
@@ -21,8 +20,6 @@ const PersonalInfo = () => {
                 nextStep={personalInfo.nextStep}
                 back={personalInfo.back}
             />
-
-
         </>
     )
 }

@@ -1,8 +1,13 @@
+import { useContext } from "react"
 import SideBar from "../components/SideBar"
 import AddOnsCard from "../components/page_cards/AddOnsCard"
 import { addOnsData } from "../data/addOns.module"
+import { StepContext } from "../App"
 
 const AddOns = () => {
+    const sum = useContext(StepContext)
+    console.log(sum);
+
     return (
         <>
             <SideBar />
@@ -11,11 +16,9 @@ const AddOns = () => {
                 title={addOnsData.title}
                 subtitle={addOnsData.subtitle}
                 add_ons={addOnsData.add_ons}
-                name={addOnsData.add_ons[0].name}
-                description={addOnsData.add_ons[0].description}
-                price={addOnsData.add_ons[0].price}
                 nextStep={addOnsData.nextStep}
                 back={addOnsData.back}
+                sum={sum}
             />
 
         </>)

@@ -12,12 +12,19 @@ type Props = {
     planMonthly: any
     planYearly: any
     icons: any
+    sum: any
 }
 
-const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons }: Props) => {
+const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons, sum }: Props) => {
     const [activeIndex, setActiveIndex] = useState(null || 0);
     const [togglePlan, setTogglePlan] = useState(true);
-    const [chosenPlan, setChosenPlan] = useState({})
+    const [chosenPlan, setChosenPlan] = useState({});
+
+    const handleNext = () => {
+        sum.push(chosenPlan)
+        // console.log(sum);
+    }
+
 
     const toggleActiveClass = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
@@ -40,11 +47,13 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
     }, [activeIndex, togglePlan]);
 
 
-    console.log(chosenPlan);
+    // console.log(chosenPlan);
+
 
 
     return (
         <div className="stepcard_container">
+            {/* <h1>{ctx_value[0].name}</h1> */}
             <h1 className='title'>{title}</h1>
             <p className='subtitle'>{subtitle}</p>
 
@@ -108,7 +117,8 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
             </div>
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                <Link to={`${nextStep}`} className="btn">Next Step</Link>
+                <Link to={`${nextStep}`} className="btn" onClick={handleNext}
+                >Next Step</Link>
             </nav>
         </div>
     );

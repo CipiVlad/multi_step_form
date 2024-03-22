@@ -11,9 +11,10 @@ type Props = {
     price: string[]
     nextStep: string
     back: string
+    sum: any
 }
 
-const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
+const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) => {
 
     //need to write logic for:
     //if in "Select Plan" page monthly plan is selected then yearly plan price should be disabled in "Add-ons" page and vice versa
@@ -46,6 +47,9 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
             setSelected(selected.filter(item => item !== e.target.value))
         }
     }
+
+    console.log(selected);
+
 
 
 
@@ -86,7 +90,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
 
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                <Link to={`${nextStep}`} className="btn">Next Step</Link>
+                <Link to={`${nextStep}`} className="btn" onClick={() => sum.push(selected)}>Next Step</Link>
             </nav>
 
         </div>
