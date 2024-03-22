@@ -25,20 +25,24 @@
         border: 1px solid $neutralLightGray;
     }
 
-    p:nth-child(1) {
+    label p:nth-child(1) {
         color: $primaryMarineBlue;
         font-weight: 700;
     }
 
-    p:nth-child(2) {
+    label p:nth-child(2) {
         color: $neutralCoolGray;
         font-weight: 400;
     }
 
-    p:nth-child(3) {
+
+    .price p {
         color: $primaryPurplishBlue;
         font-weight: 700;
     }
+
+
+
 
 }
 
