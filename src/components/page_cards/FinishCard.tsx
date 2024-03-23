@@ -36,10 +36,6 @@ const FinishCard = ({ sum }: Props) => {
     //for calculating the total
     const calcTotal = planPrice + addOnPrice;
 
-
-
-
-
     return (
         <div className="stepcard_container">
             <h1 className="title">{finish.title}</h1>
@@ -47,10 +43,12 @@ const FinishCard = ({ sum }: Props) => {
 
             <div className="summary_container">
                 <div className="summary_plan">
-                    <p>{sum.title}({planType})</p>
+                    <div>
+                        <p>{sum.title}({planType})</p>
+                        <Link to={`${finish.changePlan}`}>change</Link>
+                    </div>
                     <p>${planPrice}/{planPriceType}</p>
                 </div>
-                <Link to={`${finish.changePlan}`}>change</Link>
 
                 {
                     sum.addons.map((addon, index) => (
