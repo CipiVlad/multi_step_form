@@ -45,6 +45,8 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
         // console.log(activeData);
         if (activeData === true) {
             setSelected(prevState => [...prevState, { "value": e.target.value, "name": e.target.name }])
+            //because of line 47 class add_ons_card_active is not rendered
+            // also: if unchecking the checkbox, it should be removed from the selected array ... not working
         } else {
             setSelected(selected.filter(item => item !== e.target.value))
         }
