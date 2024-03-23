@@ -1,11 +1,27 @@
-import { useContext } from "react"
-import { StepContext } from "../App"
 import SideBar from "../components/SideBar"
 import FinishCard from "../components/page_cards/FinishCard"
 import { finish } from "../data/finish.module"
 
 const Finish = () => {
-    const sum = useContext(StepContext)
+
+    const sum = {
+        "title": "Arcade",
+        "price": "$9/mo",
+        "addons": [{
+            "title": "Online service",
+            "price": "$1/mo"
+        },
+        {
+            "title": "Larger storage",
+            "price": "$2/mo"
+        },
+        {
+            "title": "Customizable profile",
+            "price": "$2/mo"
+        }]
+    }
+
+
 
     return (
         <>

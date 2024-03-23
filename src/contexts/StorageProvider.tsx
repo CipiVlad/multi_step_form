@@ -5,9 +5,7 @@ const initialState: [{}] = [{ name: "", email: "", phone: "" }];
 export const StorageContext = React.createContext(initialState)
 
 const StorageProvider = ({ children }: { children: React.ReactNode }) => {
-
     const [storage, setStorage] = useState(initialState)
-
 
     //localStorage set and get
     useEffect(() => {
@@ -23,7 +21,7 @@ const StorageProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     return (
-        <StorageContext.Provider value={initialState}>
+        <StorageContext.Provider value={initialState, addItem}>
             {children}
         </StorageContext.Provider>
     )

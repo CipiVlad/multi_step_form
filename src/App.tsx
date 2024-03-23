@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './index.scss'
 import PersonalInfo from './pages/PersonalInfo'
@@ -7,18 +6,11 @@ import SelectPlan from './pages/SelectPlan'
 import AddOns from './pages/AddOns'
 import Finish from './pages/Finish'
 import ThankYou from './pages/ThankYou'
-
-
-
-let sum: any = []
-export const StepContext = React.createContext(sum)
+import StorageProvider from './contexts/StorageProvider'
 
 function App() {
-
-
-
   return (
-    <StepContext.Provider value={sum}>
+    <StorageProvider>
       <div className="App">
         <div className="frame_container">
           <div className="main_container">
@@ -32,7 +24,7 @@ function App() {
           </div>
         </div>
       </div>
-    </StepContext.Provider>
+    </StorageProvider>
   )
 }
 

@@ -16,7 +16,28 @@ type Props = {
 
 const FinishCard = ({ sum }: Props) => {
     //for rendering the price in monthly or yearly
-    // console.log(sum[0].price.includes("mo") ? "mo" : "yr");
+    const planType = sum.price.includes("mo") ? "Monthly" : "Yearly";
+
+    //for rendering price extended with mo or yr
+    const planPriceType = sum.price.includes("mo") ? "mo" : "yr";
+
+    //for rendering per month or per year
+    const per = sum.price.includes("mo") ? "(per month)" : "(per year)";
+
+    //for converting string to number and removing the dollar sign
+    // using replace method with regular expression
+    const planPrice = Number(sum.price.replace(/[^\d.-]/g, ''));
+
+    //for adding up all the addons
+    const addOnPrice = sum.addons.map((addon) => {
+        return Number(addon.price.replace(/[^\d.-]/g, ''))
+    }).reduce((a: number, b: number) => a + b, 0)
+
+    //for calculating the total
+    const calcTotal = planPrice + addOnPrice;
+
+
+
 
 
     return (
@@ -25,36 +46,25 @@ const FinishCard = ({ sum }: Props) => {
             <p className="subtitle">{finish.subtitle}</p>
 
             <div className="summary_container">
+                <div className="summary_plan">
+                    <p>{sum.title}({planType})</p>
+                    <p>${planPrice}/{planPriceType}</p>
+                </div>
+                <Link to={`${finish.changePlan}`}>change</Link>
+
                 {
-                    sum.map((item, index) => (
-                        <div className="summary_plan" key={index}>
-                            <p>{item.title}</p>
-                            <p>{item.price}</p>
+                    sum.addons.map((addon, index) => (
+                        <div className="summary_addons" key={index}>
+                            <p>{addon.title}</p>
+                            <p>+${Number(addon.price.replace(/[^\d.-]/g, ''))}/{planPriceType}</p>
                         </div>
                     ))
                 }
-                <Link to={`${finish.changePlan}`}>change</Link>
 
-                <div className="summary_addons">
-                    <div>
-                        {
-                            sum[2].map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))
-                        }
-                    </div>
-                    <div>
-                        {
-                            sum[1].map((item, index) => (
-                                <p key={index}>{item}</p>
-                            ))
-                        }
-                    </div>
-                </div>
             </div>
             <div className="summary_total">
-                <p>Total (per {sum[0].price.includes("mo") ? "month" : "year"})</p>
-                <p>{sum[0].price} </p>
+                <p>Total {per}</p>
+                <p>${calcTotal}/{planPriceType}</p>
             </div>
 
             <nav className="navBar">

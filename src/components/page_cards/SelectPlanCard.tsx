@@ -12,19 +12,16 @@ type Props = {
     planMonthly: any
     planYearly: any
     icons: any
-    sum: any
 }
 
-const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons, sum }: Props) => {
+const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons }: Props) => {
     const [activeIndex, setActiveIndex] = useState(null || 0);
     const [togglePlan, setTogglePlan] = useState(true);
     const [chosenPlan, setChosenPlan] = useState({});
 
     const handleNext = () => {
-        sum.push(chosenPlan)
-        // console.log(sum);
+        console.log(chosenPlan);
     }
-
 
     const toggleActiveClass = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
@@ -43,13 +40,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
             setChosenPlan(planMonthly[activeIndex])
         }
 
-
     }, [activeIndex, togglePlan]);
-
-
-    // console.log(chosenPlan);
-
-
 
     return (
         <div className="stepcard_container">
@@ -117,8 +108,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
             </div>
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                <Link to={`${nextStep}`} className="btn" onClick={handleNext}
-                >Next Step</Link>
+                <Link to={`${nextStep}`} className="btn" onClick={handleNext}>Next Step</Link>
             </nav>
         </div>
     );

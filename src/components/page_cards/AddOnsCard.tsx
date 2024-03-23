@@ -11,10 +11,9 @@ type Props = {
     price: string[]
     nextStep: string
     back: string
-    sum: any
 }
 
-const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) => {
+const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
     const [api, setApi] = useState([])
     const [selected, setSelected] = useState([])
     const [selectedPrice, setSelectedPrice] = useState([])
@@ -25,7 +24,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
 
     const [priceType, setPriceType] = useState('')
     useEffect(() => {
-        setPriceType(sum[0].price.includes("mo") ? 'monthly' : 'yearly')
+        // setPriceType(sum[0].price.includes("mo") ? 'monthly' : 'yearly')
     }, []);
 
     const handleChange = (e, index) => {
@@ -74,9 +73,10 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
 
-                <Link to={`${nextStep}`} className="btn" onClick={() =>
-                    sum.push(selected, selectedPrice)
-                }>Next Step</Link>
+                <Link to={`${nextStep}`} className="btn">
+                    {/* onClick={() => sum.push(selected, selectedPrice)} */}
+                    Next Step
+                </Link>
             </nav>
         </div>
     )
