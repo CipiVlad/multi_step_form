@@ -6,6 +6,7 @@ import { finish } from "../data/finish.module"
 
 const Finish = () => {
     const sum = useContext(StepContext)
+
     return (
         <>
 

@@ -13,6 +13,9 @@ type Props = {
 }
 
 const FinishCard = ({ title, subtitle, add_ons, name, description, price, nextStep, back, sum }: Props) => {
+    //for rendering the price in monthly or yearly
+    console.log(sum[0].price.includes("mo") ? "mo" : "yr");
+
     console.log(sum);
 
     return (

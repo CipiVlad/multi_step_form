@@ -19,6 +19,11 @@
         border-radius: 2.5px;
     }
 
+    // if input is checked set border color
+    // input[type="checkbox"]:checked {
+    //     accent-color: $primaryPurplishBlue;
+    // }
+
     // if input is not checked set border color
     input[type="checkbox"]:not(:checked) {
         appearance: none;
@@ -38,7 +43,7 @@
 
     .price p {
         color: $primaryPurplishBlue;
-        font-weight: 700;
+        font-weight: 400;
     }
 }
 

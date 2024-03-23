@@ -23,9 +23,14 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
     // const { priceType: contextPriceType } = React.useContext(PriceContext)
 
     // how to display the price in monthly or yearly?
+
+    console.log('context state:', sum[0].price.includes("mo")
+    );
+
+
     const [priceType, setPriceType] = useState('')
     useEffect(() => {
-        setPriceType('monthly')
+        setPriceType(sum[0].price.includes("mo") ? 'monthly' : 'yearly')
     }, []);
 
 
@@ -36,13 +41,10 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
     }, []);
 
     const handleChange = (e, index) => {
-
-        // console.log(e.target.value);
         const activeData = document.getElementById(index).checked
         // console.log(activeData);
-
         if (activeData === true) {
-            setSelected(prevState => [...prevState, e.target.value])
+            setSelected(prevState => [...prevState, { "value": e.target.value, "name": e.target.name }])
         } else {
             setSelected(selected.filter(item => item !== e.target.value))
         }
@@ -67,7 +69,8 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
                         <input
                             id={index}
                             type="checkbox"
-                            value={add_on.name}
+                            name={add_on.name}
+                            value={add_on.price[priceType]}
                             onChange={(e) => handleChange(e, index)}
 
                         />
