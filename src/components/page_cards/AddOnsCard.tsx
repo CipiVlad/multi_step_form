@@ -24,8 +24,8 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
 
     // how to display the price in monthly or yearly?
 
-    console.log('context state:', sum[0].price.includes("mo")
-    );
+    // console.log('context state:', sum[0].price.includes("mo")
+    // );
 
 
     const [priceType, setPriceType] = useState('')
@@ -36,6 +36,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
 
     const [api, setApi] = useState([])
     const [selected, setSelected] = useState([])
+    const [selectedPrice, setSelectedPrice] = useState([])
     useEffect(() => {
         setApi(add_ons)
     }, []);
@@ -44,11 +45,15 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
         const activeData = document.getElementById(index).checked
         // console.log(activeData);
         if (activeData === true) {
-            setSelected(prevState => [...prevState, { "value": e.target.value, "name": e.target.name }])
+            setSelected(prevState => [...prevState, e.target.value])
             //because of line 47 class add_ons_card_active is not rendered
             // also: if unchecking the checkbox, it should be removed from the selected array ... not working
+            setSelectedPrice(prevState => [...prevState, e.target.name])
+
+
         } else {
             setSelected(selected.filter(item => item !== e.target.value))
+            setSelectedPrice(selectedPrice.filter(item => item !== e.target.name))
         }
     }
 
@@ -95,7 +100,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
 
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                <Link to={`${nextStep}`} className="btn" onClick={() => sum.push(selected)}>Next Step</Link>
+                <Link to={`${nextStep}`} className="btn" onClick={() => sum.push(selected, selectedPrice)}>Next Step</Link>
             </nav>
 
         </div>
