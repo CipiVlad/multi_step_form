@@ -6,6 +6,7 @@ import './components/SideBar.scss'
 import SelectPlan from './pages/SelectPlan'
 import AddOns from './pages/AddOns'
 import Finish from './pages/Finish'
+import ThankYou from './pages/ThankYou'
 
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/select-plan" element={<SelectPlan />} />
               <Route path="/add-ons" element={<AddOns />} />
               <Route path="/finish" element={<Finish />} />
+              <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
           </div>
         </div>

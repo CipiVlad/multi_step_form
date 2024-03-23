@@ -21,9 +21,9 @@ const Finish = () => {
             <FinishCard
                 title={finish.title}
                 subtitle={finish.subtitle}
-                plan={finish.plan}
-                total={finish.total}
-                button={finish.button}
+                nextStep={finish.nextStep}
+                back={finish.back}
+                changePlan={finish.changePlan}
                 sum={sum}
             />
 

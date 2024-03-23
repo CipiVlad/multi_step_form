@@ -15,41 +15,24 @@ type Props = {
 }
 
 const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) => {
+    const [api, setApi] = useState([])
+    const [selected, setSelected] = useState([])
+    const [selectedPrice, setSelectedPrice] = useState([])
 
-    //need to write logic for:
-    //if in "Select Plan" page monthly plan is selected then yearly plan price should be disabled in "Add-ons" page and vice versa
-    //Which hook should be used for that?
-    //try: useContext
-    // const { priceType: contextPriceType } = React.useContext(PriceContext)
-
-    // how to display the price in monthly or yearly?
-
-    // console.log('context state:', sum[0].price.includes("mo")
-    // );
-
+    useEffect(() => {
+        setApi(add_ons)
+    }, []);
 
     const [priceType, setPriceType] = useState('')
     useEffect(() => {
         setPriceType(sum[0].price.includes("mo") ? 'monthly' : 'yearly')
     }, []);
 
-
-    const [api, setApi] = useState([])
-    const [selected, setSelected] = useState([])
-    const [selectedPrice, setSelectedPrice] = useState([])
-    useEffect(() => {
-        setApi(add_ons)
-    }, []);
-
     const handleChange = (e, index) => {
         const activeData = document.getElementById(index).checked
-        // console.log(activeData);
         if (activeData === true) {
             setSelected(prevState => [...prevState, e.target.value])
-            //because of line 47 class add_ons_card_active is not rendered
-            // also: if unchecking the checkbox, it should be removed from the selected array ... not working
             setSelectedPrice(prevState => [...prevState, e.target.name])
-
 
         } else {
             setSelected(selected.filter(item => item !== e.target.value))
@@ -57,19 +40,12 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
         }
     }
 
-    console.log(selected);
-
-
-
-
+    // console.log(selected);
     return (
         <div className="stepcard_container">
             <h1 className='title'>{title}</h1>
             <p className='subtitle'>{subtitle}</p>
-
-
             {
-
                 api.map((add_on, index) => (
                     <div className={`${selected && selected.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
 
@@ -95,14 +71,13 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, sum }: Props) =>
 
             }
 
-
-
-
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                <Link to={`${nextStep}`} className="btn" onClick={() => sum.push(selected, selectedPrice)}>Next Step</Link>
-            </nav>
 
+                <Link to={`${nextStep}`} className="btn" onClick={() =>
+                    sum.push(selected, selectedPrice)
+                }>Next Step</Link>
+            </nav>
         </div>
     )
 }
