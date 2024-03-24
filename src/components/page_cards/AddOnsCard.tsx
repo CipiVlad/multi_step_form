@@ -17,9 +17,8 @@ type Props = {
 
 const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem }: Props) => {
     const [api, setApi] = useState([])
-    const [selected, setSelected] = useState([])
-    const [selectedPrice, setSelectedPrice] = useState([])
-    const [priceDisplay, setPriceDisplay] = useState([])
+    const [addon, setAddon] = useState([])
+    const [addonTitle, setAddonTitle] = useState([])
 
     useEffect(() => {
         setApi(add_ons)
@@ -27,37 +26,40 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
     }, []);
 
-    console.log(api);
 
-    const [sum, setSum] = useState([])
+    const [sum, setSum] = useState([{}])
     useEffect(() => {
         setTimeout(() => {
-            console.log(getItem("plan"));
             setSum(getItem("plan"))
         }, 50)
     }, []);
 
-
     const [priceType, setPriceType] = useState('')
     useEffect(() => {
-        console.log(sum);
         setTimeout(() => {
-            setPriceType(sum.price.includes("mo") ? 'monthly' : 'yearly')
+            setPriceType(getItem("plan").price.includes("mo") ? 'monthly' : 'yearly');
         }, 50)
-        // setPriceType(getItem().price.includes("mo") ? 'monthly' : 'yearly')
     }, [sum]);
+    console.log();
+
 
     const handleChange = (e, index) => {
         const activeData = document.getElementById(index).checked
         if (activeData === true) {
-            setSelected(prevState => [...prevState, e.target.value])
-            setSelectedPrice(prevState => [...prevState, e.target.name])
+            setAddon(prevState => [...prevState, e.target.value])
+            setAddonTitle(prevState => [...prevState, e.target.name])
 
         } else {
-            setSelected(selected.filter(item => item !== e.target.value))
-            setSelectedPrice(selectedPrice.filter(item => item !== e.target.name))
+            setAddon(addon.filter(item => item !== e.target.value))
+            setAddonTitle(addonTitle.filter(item => item !== e.target.name))
         }
     }
+
+
+    const setItemStorage = () => {
+        setItem({ price: addon, name: addonTitle }, "addon")
+    }
+
 
     return (
         <div className="stepcard_container">
@@ -65,7 +67,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
             <p className='subtitle'>{subtitle}</p>
             {
                 api.map((add_on, index) => (
-                    <div className={`${selected && selected.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
+                    <div className={`${addon && addon.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
 
                         <input
                             id={index}
@@ -93,9 +95,9 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
 
-                <Link to={`${nextStep}`} className="btn" >
+                <Link to={`${nextStep}`} className="btn" onClick={() => setItemStorage()} >
 
-                    {/* onClick={() => sum.push(selected, selectedPrice)} */}
+                    {/* onClick={() => sum.push(addon, addonTitle)} */}
                     Next Step
                 </Link>
             </nav>

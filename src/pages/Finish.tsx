@@ -1,25 +1,28 @@
+import { useContext } from "react"
 import SideBar from "../components/SideBar"
 import FinishCard from "../components/page_cards/FinishCard"
 import { finish } from "../data/finish.module"
-
+import { StorageContext } from "../contexts/StorageProvider"
 const Finish = () => {
 
-    const sum = {
-        "title": "Arcade",
-        "price": "$9/mo",
-        "addons": [{
-            "title": "Online service",
-            "price": "$1/mo"
-        },
-        {
-            "title": "Larger storage",
-            "price": "$2/mo"
-        },
-        {
-            "title": "Customizable profile",
-            "price": "$2/mo"
-        }]
-    }
+    const [setItem, getItem] = useContext(StorageContext) || []
+
+    // const sum = {
+    //     "title": "Arcade",
+    //     "price": "$9/mo",
+    //     "addons": [{
+    //         "title": "Online service",
+    //         "price": "$1/mo"
+    //     },
+    //     {
+    //         "title": "Larger storage",
+    //         "price": "$2/mo"
+    //     },
+    //     {
+    //         "title": "Customizable profile",
+    //         "price": "$2/mo"
+    //     }]
+    // }
 
 
 
@@ -40,7 +43,9 @@ const Finish = () => {
                 nextStep={finish.nextStep}
                 back={finish.back}
                 changePlan={finish.changePlan}
-                sum={sum}
+                // sum={sum}
+                setItem={setItem}
+                getItem={getItem}
             />
 
         </>

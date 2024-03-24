@@ -8,12 +8,6 @@ import { useContext, useEffect } from "react"
 
 const SelectPlan = () => {
     const [setItem, getItem] = useContext(StorageContext) || [];
-
-
-    useEffect(() => {
-        console.log(getItem());
-    }, []);
-
     return (
         <>
             <SideBar />
