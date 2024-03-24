@@ -21,7 +21,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
     useEffect(() => {
         if (inputs && inputs.name && inputs.email && inputs.phone) {
             try {
-                setItem(inputs);
+                setItem(inputs, "person");
 
             } catch (error) {
                 console.error("Error setting localStorage:", error);
@@ -31,9 +31,9 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
 
     //persist storage in localstorage on page reload, and get it from localstorage to display it on page 
     useEffect(() => {
-        if (localStorage.storage) {
+        if (localStorage.person) {
             try {
-                setInputs(JSON.parse(localStorage.getItem("storage") || "[]"));
+                setInputs(JSON.parse(localStorage.getItem("person") || "[]"));
             } catch (error) {
                 console.error("Error setting localStorage:", error);
             }

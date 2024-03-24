@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react"
 import { StorageContext } from "../contexts/StorageProvider"
 
 const PersonalInfo = () => {
-    const [setItem, getItem] = useContext(StorageContext)
+    const [setItem, getItem] = useContext(StorageContext) || [];
 
     return (
         <>

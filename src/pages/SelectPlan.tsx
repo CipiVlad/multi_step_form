@@ -3,11 +3,16 @@ import '../components/SideBar.scss'
 import { selectPlan } from "../data/selectPlan.module"
 import SelectPlanCard from "../components/page_cards/SelectPlanCard"
 import { StorageContext } from "../contexts/StorageProvider"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 
 const SelectPlan = () => {
-    const [storage, addItem] = useContext(StorageContext)
+    const [setItem, getItem] = useContext(StorageContext) || [];
+
+
+    useEffect(() => {
+        console.log(getItem());
+    }, []);
 
     return (
         <>
@@ -23,8 +28,8 @@ const SelectPlan = () => {
                 nextStep={selectPlan.nextStep}
                 back={selectPlan.back}
                 icons={selectPlan.icons}
-                addItem={addItem}
-                storage={storage}
+                setItem={setItem}
+                getItem={getItem}
             />
 
         </>

@@ -1,11 +1,17 @@
+import { useContext } from "react"
 import SideBar from "../components/SideBar"
 import AddOnsCard from "../components/page_cards/AddOnsCard"
+import { StorageContext } from "../contexts/StorageProvider"
 import { addOnsData } from "../data/addOns.module"
 
 const AddOns = () => {
+    const [setItem, getItem] = useContext(StorageContext) || []
+
+
     return (
         <>
             <SideBar />
+
 
             <AddOnsCard
                 title={addOnsData.title}
@@ -13,6 +19,8 @@ const AddOns = () => {
                 add_ons={addOnsData.add_ons}
                 nextStep={addOnsData.nextStep}
                 back={addOnsData.back}
+                setItem={setItem}
+                getItem={getItem}
             />
 
         </>)

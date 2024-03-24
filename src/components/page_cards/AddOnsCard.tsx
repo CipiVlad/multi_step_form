@@ -11,21 +11,41 @@ type Props = {
     price: string[]
     nextStep: string
     back: string
+    setItem: any
+    getItem: any
 }
 
-const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
+const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem }: Props) => {
     const [api, setApi] = useState([])
     const [selected, setSelected] = useState([])
     const [selectedPrice, setSelectedPrice] = useState([])
+    const [priceDisplay, setPriceDisplay] = useState([])
 
     useEffect(() => {
         setApi(add_ons)
+        getItem("plan")
+
     }, []);
+
+    console.log(api);
+
+    const [sum, setSum] = useState([])
+    useEffect(() => {
+        setTimeout(() => {
+            console.log(getItem("plan"));
+            setSum(getItem("plan"))
+        }, 50)
+    }, []);
+
 
     const [priceType, setPriceType] = useState('')
     useEffect(() => {
-        // setPriceType(sum[0].price.includes("mo") ? 'monthly' : 'yearly')
-    }, []);
+        console.log(sum);
+        setTimeout(() => {
+            setPriceType(sum.price.includes("mo") ? 'monthly' : 'yearly')
+        }, 50)
+        // setPriceType(getItem().price.includes("mo") ? 'monthly' : 'yearly')
+    }, [sum]);
 
     const handleChange = (e, index) => {
         const activeData = document.getElementById(index).checked
@@ -39,7 +59,6 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
         }
     }
 
-    // console.log(selected);
     return (
         <div className="stepcard_container">
             <h1 className='title'>{title}</h1>
@@ -61,10 +80,11 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
                             <p>{add_on.description}</p>
                         </label>
 
+
                         <div className="price">
                             <p>{add_on.price[priceType]}</p>
+                            {/* <p>{priceDisplay[1]}</p> */}
                         </div>
-
                     </div>
                 ))
 
@@ -73,7 +93,8 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back }: Props) => {
             <nav className="navBar">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
 
-                <Link to={`${nextStep}`} className="btn">
+                <Link to={`${nextStep}`} className="btn" >
+
                     {/* onClick={() => sum.push(selected, selectedPrice)} */}
                     Next Step
                 </Link>

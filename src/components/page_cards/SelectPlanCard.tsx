@@ -12,30 +12,19 @@ type Props = {
     planMonthly: any
     planYearly: any
     icons: any
-    addItem: any
-    storage: any
+    setItem: any
+    getItem: any
+
 }
 
-const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons, addItem, storage }: Props) => {
+const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons, setItem, getItem }: Props) => {
     const [activeIndex, setActiveIndex] = useState(null || 0);
     const [togglePlan, setTogglePlan] = useState(true);
     const [chosenPlan, setChosenPlan] = useState({});
 
     const handleNext = () => {
-        console.log(chosenPlan);
+        setItem(chosenPlan, "plan");
     }
-
-    useEffect(() => {
-        //copy to existing localstorage
-        if (chosenPlan) {
-
-            try {
-                addItem(chosenPlan);
-            } catch (error) {
-                console.error("Error setting localStorage:", error);
-            }
-        }
-    }, [chosenPlan]);
 
     const toggleActiveClass = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
