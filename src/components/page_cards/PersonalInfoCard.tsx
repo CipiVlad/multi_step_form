@@ -1,25 +1,45 @@
 import { Link } from "react-router-dom"
 import './PersonalInfoCard.scss'
-import { useState } from "react"
-
+import { useEffect, useState } from "react"
 
 type Props = {
     title: string
     subtitle: string
     nextStep: string
     back: boolean
+    setItem: any
+    getItem: any
 }
 
-
-const PersonalInfoCard = ({ title, subtitle, nextStep, back }: Props) => {
+const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }: Props) => {
     const [inputs, setInputs] = useState({})
 
-    const handleNext = (e) => {
-        e.preventDefault()
-        const { name, value } = e.target
-        setInputs(prevState => ({ ...prevState, [name]: value }))
-        console.log(inputs)
-    }
+
+    const handleChange = ({ target: { name, value } }) => setInputs(inputs => ({ ...inputs, [name]: value }));
+
+    //parse storage only when all inputfields are filled and pass them to addItem
+    useEffect(() => {
+        if (inputs && inputs.name && inputs.email && inputs.phone) {
+            try {
+                setItem(inputs);
+
+            } catch (error) {
+                console.error("Error setting localStorage:", error);
+            }
+        }
+    }, [inputs]);
+
+    //persist storage in localstorage on page reload, and get it from localstorage to display it on page 
+    useEffect(() => {
+        if (localStorage.storage) {
+            try {
+                setInputs(JSON.parse(localStorage.getItem("storage") || "[]"));
+            } catch (error) {
+                console.error("Error setting localStorage:", error);
+            }
+        }
+    }, []);
+
 
 
     return (
@@ -28,19 +48,19 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back }: Props) => {
                 <div className="stepcard_container">
                     <h1 className="title">{title}</h1>
                     <p className="subtitle">{subtitle}</p>
-                    <form className="form">
+                    <form className="form" >
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" value={inputs.name} onChange={handleNext}
+                        <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
 
                             id="name" placeholder="e.g. Stephen King" required />
 
                         <label htmlFor="email">Email Address</label>
-                        <input type="email" name="email" value={inputs.email} onChange={handleNext}
+                        <input type="email" name="email" value={inputs.email || ""} onChange={handleChange}
 
                             id="email" placeholder="e.g. stephenking@lorem" required />
 
                         <label htmlFor="phone">Phone Number</label>
-                        <input type="tel" name="phone" value={inputs.phone} onChange={handleNext}
+                        <input type="tel" name="phone" value={inputs.phone || ""} onChange={handleChange}
 
                             id="phone" placeholder="e.g. +1 234 567 890" required />
 
