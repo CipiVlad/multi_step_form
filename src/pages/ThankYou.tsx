@@ -1,6 +1,13 @@
+import SideBar from "../components/SideBar"
+import ThankYouCard from "../components/page_cards/ThankYouCard"
+
 const ThankYou = () => {
+
     return (
-        <div>ThankYou</div>
+        <>
+            <SideBar />
+            <ThankYouCard />
+        </>
     )
 }
 export default ThankYou
