@@ -3,25 +3,29 @@
 .plan_container {
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    margin: 2em 0;
+    gap: 18px;
+
+    .subtitle {
+        margin: 2vh 0;
+    }
 
     .plan_card {
+        display: grid;
         border: 1px solid $neutralLightGray;
         border-radius: 8px;
         padding: 20px;
         //fix width and height for plan_card
         width: 155px;
-        height: 205px;
+        height: 180px;
         cursor: pointer;
         //remove scrollbar
         overflow: hidden;
+        gap: 35px;
 
         .plan_description h3 {
             color: $primaryMarineBlue;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         //second p in .plan_description
@@ -60,11 +64,13 @@
     .inactive {
         color: $neutralCoolGray;
         font-weight: 500;
+        font-size: 0.9rem;
     }
 
     .active {
         color: $primaryMarineBlue;
         font-weight: 500;
+        font-size: 0.9rem;
     }
 
     .switch {

@@ -1,4 +1,5 @@
 import './SideBar.scss'
+import '../sass/@media.scss'
 import { steps } from '../data/steps.module'
 // import StepCardContainer from './page_cards/PersonalInfoCard'
 
