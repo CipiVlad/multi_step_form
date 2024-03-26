@@ -23,13 +23,24 @@ body {
         height: 100vh;
         background-color: $neutralAlabaster;
 
-        .frame_container {
-            background-color: $neutralWhite;
-            width: 950px;
-            height: 608px;
-            border-radius: 18px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-    }
+        @media screen and (max-width: $layoutLenovo) {
+            .frame_container {
+                background-color: $neutralWhite;
+                width: 805px;
+                height: 608px;
+                border-radius: 18px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
+                .main_container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    gap: 40px;
+
+                }
+            }
+        }
+
+    }
 }
