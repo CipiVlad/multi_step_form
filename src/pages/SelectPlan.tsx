@@ -10,6 +10,8 @@ const SelectPlan = () => {
     const [setItem, getItem] = useContext(StorageContext) || [];
     return (
         <>
+            <div className="spacer"></div>
+
             <SideBar />
 
             <SelectPlanCard

@@ -63,8 +63,10 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
     return (
         <div className="stepcard_container">
-            <h1 className='title'>{title}</h1>
-            <p className='subtitle'>{subtitle}</p>
+            <div className="stepcard_description">
+                <h1 className="title">{title}</h1>
+                <p className="subtitle">{subtitle}</p>
+            </div>
             {
                 api.map((add_on, index) => (
                     <div className={`${addon && addon.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >

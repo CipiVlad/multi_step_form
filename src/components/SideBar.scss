@@ -7,10 +7,14 @@
     background-repeat: no-repeat;
     width: 274px;
     height: 568px;
+    margin-right: 100px;
 
     //center vertically
     .step_container {
+        display: grid;
+        gap: 30px;
         padding: 30px;
+
 
         .step_card {
             display: flex;
@@ -41,14 +45,18 @@
                 //only first paragraph
                 p:nth-child(1) {
                     font-size: smaller;
-                    font-weight: 400;
-                    color: $neutralCoolGray;
+                    font-weight: 300;
+
+                    color: $primaryPastelBlue
                 }
 
                 h3 {
                     font-weight: 700;
-                    font-size: smaller;
+                    font-size: 0.9rem;
                 }
+
+                //only first paragraph
+
 
             }
         }
@@ -65,21 +73,28 @@ right side main_container
 */
 
 .stepcard_container {
-    .title {
-        color: $primaryMarineBlue;
-        font-weight: 700;
-    }
+    width: 90%;
+    height: 90%;
+    display: grid;
+    gap: inherit;
 
-    .subtitle {
-        color: $neutralCoolGray;
-        font-weight: 400;
-    }
+    .stepcard_description {
+        .title {
+            color: $primaryMarineBlue;
+            font-weight: 700;
+        }
 
+        .subtitle {
+            color: $neutralCoolGray;
+            font-weight: 400;
+        }
+    }
 
     nav {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        align-self: end;
 
         //first anchor tag
         a:nth-child(1) {
@@ -130,7 +145,6 @@ right side main_container
         width: 274px;
         height: 568px;
 
-        //center vertically
         .step_container {
             display: grid;
             gap: 30px;
@@ -167,22 +181,7 @@ right side main_container
                     }
                 }
 
-                .step_description {
-                    color: $neutralAlabaster;
-
-                    //only first paragraph
-                    p:nth-child(1) {
-                        font-size: smaller;
-                        font-weight: 300;
-
-                        color: $primaryPastelBlue
-                    }
-
-                    h3 {
-                        font-weight: 700;
-                        font-size: 0.9rem;
-                    }
-                }
+                .step_description {}
             }
         }
     }

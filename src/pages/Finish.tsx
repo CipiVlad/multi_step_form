@@ -28,6 +28,7 @@ const Finish = () => {
 
     return (
         <>
+            <div className="spacer"></div>
 
             <SideBar
                 title={finish.title}

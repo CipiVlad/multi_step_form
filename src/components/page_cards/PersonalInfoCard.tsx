@@ -46,24 +46,21 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
         <>
             {
                 <div className="stepcard_container">
-                    <h1 className="title">{title}</h1>
-                    <p className="subtitle">{subtitle}</p>
+                    <div className="stepcard_description">
+                        <h1 className="title">{title}</h1>
+                        <p className="subtitle">{subtitle}</p>
+                    </div>
+
                     <form className="form" >
                         <label htmlFor="name">Name</label>
                         <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
-
                             id="name" placeholder="e.g. Stephen King" required />
-
                         <label htmlFor="email">Email Address</label>
                         <input type="email" name="email" value={inputs.email || ""} onChange={handleChange}
-
                             id="email" placeholder="e.g. stephenking@lorem" required />
-
                         <label htmlFor="phone">Phone Number</label>
                         <input type="tel" name="phone" value={inputs.phone || ""} onChange={handleChange}
-
                             id="phone" placeholder="e.g. +1 234 567 890" required />
-
                     </form>
                     <nav className="navBar">
                         <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>

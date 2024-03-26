@@ -10,9 +10,8 @@ const AddOns = () => {
 
     return (
         <>
+            <div className="spacer"></div>
             <SideBar />
-
-
             <AddOnsCard
                 title={addOnsData.title}
                 subtitle={addOnsData.subtitle}

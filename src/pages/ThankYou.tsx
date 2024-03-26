@@ -5,6 +5,7 @@ const ThankYou = () => {
 
     return (
         <>
+            <div className="spacer"></div>
             <SideBar />
             <ThankYouCard />
         </>

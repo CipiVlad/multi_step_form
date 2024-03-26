@@ -55,9 +55,11 @@ const FinishCard = ({ getItem, setItem }: Props) => {
 
     return (
         <div className="stepcard_container">
+            <div className="stepcard_description">
+                <h1 className="title">{finish.title}</h1>
+                <p className="subtitle">{finish.subtitle}</p>
+            </div>
 
-            <h1 className="title">{finish.title}</h1>
-            <p className="subtitle">{finish.subtitle}</p>
 
             <div className="summary_container">
                 <div className="summary_plan">
