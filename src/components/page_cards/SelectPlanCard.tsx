@@ -69,7 +69,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                                     <img src={icons[plan.id - 1].name} alt={icons[plan.id - 1].alt} />
                                 </div>
                                 <div className="plan_description">
-                                    <h3>{plan.title}</h3>
+                                    <p>{plan.title}</p>
                                     <p>{plan.price}</p>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                                     <img src={icons[plan.id - 1].name} alt={icons[plan.id - 1].alt} />
                                 </div>
                                 <div className="plan_description">
-                                    <h3>{plan.title}</h3>
+                                    <p>{plan.title}</p>
                                     <p>{plan.price}</p>
                                     <p>{plan.description}</p>
                                 </div>

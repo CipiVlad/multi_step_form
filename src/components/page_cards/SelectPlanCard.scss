@@ -18,25 +18,28 @@
         padding: 20px;
         //fix width and height for plan_card
         width: 155px;
-        height: 180px;
+        // height: 180px;
         cursor: pointer;
         //remove scrollbar
         overflow: hidden;
         gap: 35px;
 
-        .plan_description h3 {
+        .plan_description p:nth-child(1) {
             color: $primaryMarineBlue;
             font-weight: 500;
+            margin-bottom: 1vh;
         }
 
         //second p in .plan_description
         .plan_description p:nth-child(2) {
             color: $neutralCoolGray;
+            font-size: smaller;
             font-weight: 400;
         }
 
         .plan_description p:nth-child(3) {
             color: $primaryMarineBlue;
+            font-size: smaller;
             font-weight: 400;
         }
 
