@@ -6,7 +6,7 @@
 
 [DONE!]» Sidebar scss: [Highlight each step on time]
 
-» Maek Toggle Button smaller
+[DONE!]» Maek Toggle Button smaller
 
 » @media-queries: responsive design
 
