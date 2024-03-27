@@ -9,7 +9,7 @@ const SideBar = () => {
     //get current pathname
     const { pathname } = useLocation();
 
-    //for setting the active index
+    //setting the active index
     const [activeIndex, setActiveIndex] = useState(null || 0);
 
     const toggleActiveClass = (index) => {
@@ -18,9 +18,14 @@ const SideBar = () => {
 
     useEffect(() => {
         const matchingStep = steps.find(step => step.endpoint === pathname);
-        console.log(typeof matchingStep);
+        console.log(matchingStep);
 
         setActiveIndex(matchingStep ? steps.indexOf(matchingStep) : null);
+
+        //for Thank You Page where all steps are completed 
+        if (!matchingStep) {
+            setActiveIndex(3)
+        }
 
     }, [pathname]);
 
@@ -32,9 +37,7 @@ const SideBar = () => {
                     {steps.map((step, index) => (
                         <div className="step_card" key={step.id}>
                             <div
-
-                                className={`step_number ${index === activeIndex ? 'step_number_active' : ''} `}
-                                // if 
+                                className={`step_number ${index === activeIndex ? 'step_number_active' : ''}`}
                                 onChange={() => toggleActiveClass(index)}
                             >
                                 <span>{step.id}</span>
