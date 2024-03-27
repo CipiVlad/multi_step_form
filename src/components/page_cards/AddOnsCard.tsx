@@ -26,7 +26,6 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
     }, []);
 
-
     const [sum, setSum] = useState([{}])
     useEffect(() => {
         setTimeout(() => {
@@ -60,6 +59,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
         setItem({ price: addon, name: addonTitle }, "addon")
     }
 
+    console.log(addonTitle);
 
     return (
         <div className="stepcard_container">
@@ -69,20 +69,25 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
             </div>
             {
                 api.map((add_on, index) => (
-                    <div className={`${addon && addon.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
+                    <div className={`${addonTitle && addonTitle.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
+                        <div>
 
-                        <input
-                            id={index}
-                            type="checkbox"
-                            name={add_on.name}
-                            value={add_on.price[priceType]}
-                            onChange={(e) => handleChange(e, index)}
+                            <input
+                                id={index}
+                                type="checkbox"
+                                name={add_on.name}
+                                value={add_on.price[priceType]}
+                                onChange={(e) => handleChange(e, index)}
+                            />
 
-                        />
-                        <label htmlFor={add_on.name}>
-                            <p>{add_on.name}</p>
-                            <p>{add_on.description}</p>
-                        </label>
+                        </div>
+                        <div style={{ width: '50%' }}>
+
+                            <label htmlFor={add_on.name}>
+                                <p>{add_on.name}</p>
+                                <p>{add_on.description}</p>
+                            </label>
+                        </div>
 
 
                         <div className="price">

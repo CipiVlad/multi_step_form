@@ -7,7 +7,6 @@ import { addOnsData } from "../data/addOns.module"
 const AddOns = () => {
     const [setItem, getItem] = useContext(StorageContext) || []
 
-
     return (
         <>
             <div className="spacer"></div>
