@@ -19,11 +19,11 @@ const SideBar = () => {
     useEffect(() => {
         const matchingStep = steps.find(step => step.endpoint === pathname);
         setActiveIndex(matchingStep ? steps.indexOf(matchingStep) : null);
-
         //for Thank You Page where all steps are completed 
         if (!matchingStep) {
             setActiveIndex(3)
         }
+
 
     }, [pathname]);
 

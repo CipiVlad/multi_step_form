@@ -123,8 +123,10 @@ right side main_container
             }
         }
 
-        a:nth-child(2) {
+        // a:nth-child(2) 
+        .btn {
             text-decoration: none;
+            border-style: none;
             color: $neutralCoolGray;
             font-weight: 500;
             //smooth transition
