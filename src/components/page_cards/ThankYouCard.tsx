@@ -1,14 +1,8 @@
 import './ThankYouCard.scss'
 import image from '../../assets/images/icon-thank-you.svg'
-const thankyou = {
-    "imageAlt": "thankyou icon",
-    "title": "Thank you!",
-    "subtitle": "Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com"
-}
+import { thankyou } from '../../data/thankyou.module'
 
 const ThankYouCard = () => {
-    console.log(thankyou.image);
-
     return (
         <div className="stepcard_container">
             <div className="thankyou_container">

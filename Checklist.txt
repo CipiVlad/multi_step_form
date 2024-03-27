@@ -1,0 +1,19 @@
+//CSS
+
+» make required input fields work
+
+» on layout: decrease distance btw. label and input 
+
+» Sidebar scss: [Highlight each step on time]
+
+» Maek Toggle Button smaller
+
+» @media-queries: responsive design
+
+
+//JS
+
+» TS Types Check
+
+» JEST Testing
+

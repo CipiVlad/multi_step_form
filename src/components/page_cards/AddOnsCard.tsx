@@ -39,8 +39,6 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
             setPriceType(getItem("plan").price.includes("mo") ? 'monthly' : 'yearly');
         }, 50)
     }, [sum]);
-    console.log();
-
 
     const handleChange = (e, index) => {
         const activeData = document.getElementById(index).checked
@@ -58,8 +56,6 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     const setItemStorage = () => {
         setItem({ price: addon, name: addonTitle }, "addon")
     }
-
-    console.log(addonTitle);
 
     return (
         <div className="stepcard_container">

@@ -24,7 +24,7 @@
             height: 100%;
 
             .step_number {
-                border: 1px solid $neutralAlabaster;
+                border: 1px solid $primaryLightBlue;
                 border-radius: 50%;
                 width: 35px;
                 height: 35px;
@@ -35,36 +35,48 @@
                 span {
                     color: $neutralAlabaster;
                     font-weight: 700;
+                    font-size: 0.9rem;
                 }
             }
 
+            .step_number_active {
 
-            .step_description {
-                color: $neutralAlabaster;
+                background-color: $primaryLightBlue;
 
-                //only first paragraph
-                p:nth-child(1) {
-                    font-size: smaller;
-                    font-weight: 300;
 
-                    color: $primaryPastelBlue
+                span {
+                    color: $primaryMarineBlue;
                 }
-
-                h3 {
-                    font-weight: 700;
-                    font-size: 0.9rem;
-                }
-
-                //only first paragraph
-
-
             }
         }
 
 
+        .step_description {
+            color: $neutralAlabaster;
 
+            //only first paragraph
+            p:nth-child(1) {
+                font-size: smaller;
+                font-weight: 300;
+
+                color: $primaryPastelBlue
+            }
+
+            h3 {
+                font-weight: 700;
+                font-size: 0.9rem;
+            }
+
+            //only first paragraph
+
+
+        }
     }
+
+
+
 }
+
 
 
 

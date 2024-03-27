@@ -12,7 +12,6 @@ type Props = {
     nextStep: string
     back: string
     changePlan: string
-    // sum: any
     getItem: any
     setItem: any
 }
@@ -36,6 +35,14 @@ const FinishCard = ({ getItem, setItem }: Props) => {
     const planPrice = Number(plan.price?.replace(/[^\d.-]/g, ''));
 
     // for adding up all the addons
+    /**
+     * 1) The code uses the map function to iterate over each price in the addon.price array.
+     * 2) Inside the map function, it uses the replace method with a regular expression to remove any non-digit characters from each price string.
+     * 3) The Number function is then used to convert each cleaned price string into a number.
+     * 4) The reduce function is used to sum up all the numbers in the resulting array, starting from an initial value of 0.
+     * 5) The final sum is assigned to the addOnPrice variable.
+
+    */
     const addOnPrice = addon.price?.map((price, index) => {
         return Number(price.replace(/[^\d.-]/g, ''))
     }).reduce((a: number, b: number) => a + b, 0);
