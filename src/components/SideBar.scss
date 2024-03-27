@@ -113,7 +113,7 @@ right side main_container
         a:nth-child(1) {
             text-decoration: none;
             color: $neutralCoolGray;
-            font-weight: 400;
+            font-weight: 500;
 
             &:hover {
                 color: $primaryMarineBlue;
@@ -133,6 +133,8 @@ right side main_container
             color: $neutralWhite;
             padding: 16px 20px;
             border-radius: 8px;
+            width: 120px;
+            text-align: center;
 
             &:hover {
                 background-color: $primaryPastelBlue;
