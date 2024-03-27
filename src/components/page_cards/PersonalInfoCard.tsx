@@ -14,8 +14,7 @@ type Props = {
 const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }: Props) => {
     const [inputs, setInputs] = useState({})
 
-
-    const handleChange = ({ target: { name, value } }) => setInputs(inputs => ({ ...inputs, [name]: value }));
+    const handleChange = ({ target: { name, value } }: { target: { name: string, value: string } }) => setInputs(inputs => ({ ...inputs, [name]: value }));
 
     //parse storage only when all inputfields are filled and pass them to addItem
     useEffect(() => {
@@ -40,8 +39,6 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
         }
     }, []);
 
-
-
     return (
         <>
             {
@@ -50,11 +47,12 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
                         <h1 className="title">{title}</h1>
                         <p className="subtitle">{subtitle}</p>
                     </div>
-
                     <form className="form" >
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">Name
+                        </label>
                         <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
-                            id="name" placeholder="e.g. Stephen King" required />
+                            id="name" placeholder="e.g. Stephen King"
+                        />
                         <label htmlFor="email">Email Address</label>
                         <input type="email" name="email" value={inputs.email || ""} onChange={handleChange}
                             id="email" placeholder="e.g. stephenking@lorem" required />
@@ -67,10 +65,9 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
                         <Link to={`${nextStep}`} className="btn">Next Step</Link>
                     </nav>
                 </div>
-
             }
-
         </>
     )
 }
 export default PersonalInfoCard
+
