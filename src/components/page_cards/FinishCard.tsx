@@ -18,17 +18,19 @@ type Props = {
 }
 
 const FinishCard = ({ getItem, setItem }: Props) => {
+    const [plan, setPlan] = useState({})
+    const [addon, setAddon] = useState([])
 
 
     // //for rendering the price in monthly or yearly
 
-    // const planType = plan.price.includes("mo") ? "Monthly" : "Yearly";
+    const planType = plan.price?.includes("mo") ? "Monthly" : "Yearly";
 
     // //for rendering price extended with mo or yr
     // const planPriceType = plan.price.includes("mo") ? "mo" : "yr";
 
     // //for rendering per month or per year
-    // const per = api.price.includes("mo") ? "(per month)" : "(per year)";
+    const per = plan.price?.includes("mo") ? "(per month)" : "(per year)";
 
     // //for converting string to number and removing the dollar sign
     // // using replace method with regular expression
@@ -41,16 +43,13 @@ const FinishCard = ({ getItem, setItem }: Props) => {
 
     // //for calculating the total
     // const calcTotal = planPrice + addOnPrice;
-    const [plan, setPlan] = useState({})
-    const [addon, setAddon] = useState([])
     useEffect(() => {
         getItem("plan");
         getItem("addon")
         setPlan(getItem("plan"))
         setAddon(getItem("addon"))
     }, []);
-    console.log(plan);
-    console.log(addon);
+
 
 
     return (
@@ -60,22 +59,30 @@ const FinishCard = ({ getItem, setItem }: Props) => {
                 <p className="subtitle">{finish.subtitle}</p>
             </div>
 
-
             <div className="summary_container">
                 <div className="summary_plan">
                     <div>
-                        <p> {plan.title}</p>
-                        <Link to={`${finish.changePlan}`}>change</Link>
+                        <p> {plan.title} ({planType})</p>
+                        <Link to={`${finish.changePlan}`}>Change</Link>
                     </div>
                     <p>{plan.price}</p>
                 </div>
-                <div className="summary_addons">
-                    <p>{addon.name}</p>
-                    <p>{addon.price === "0" ? "" : `+${addon.price}`}</p>
-                </div>
+                <div className="line"></div>
+                {
+                    addon.name?.map((element, index) => (
+                        <div className="summary_addons">
+                            <>
+                                <p key={index}>{element} <br /></p>
+                            </>
+                            <p>+{addon.price[index]}</p>
+                        </div>
+                    ))
+                }
+
             </div>
+
             <div className="summary_total">
-                <p>Total (per)</p>
+                <p>Total {per}</p>
                 <p> {plan.price}</p>
 
             </div>

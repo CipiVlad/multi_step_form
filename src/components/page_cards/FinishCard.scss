@@ -17,8 +17,14 @@
 
         p {
             color: $primaryMarineBlue;
-            font-weight: 500;
+            font-weight: 700;
         }
+
+    }
+
+    .line {
+        margin: 2vh 0;
+        border: 0.1px solid $neutralLightGray;
     }
 
     .summary_addons {
@@ -30,13 +36,19 @@
             color: $neutralCoolGray;
             font-weight: 400;
         }
+
+        p:nth-child(2) {
+            color: $primaryMarineBlue;
+            font-weight: 400;
+            font-size: 0.9em;
+        }
     }
 }
 
 .summary_total {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    padding: 10px;
 
     p:nth-child(1) {
         color: $neutralCoolGray;

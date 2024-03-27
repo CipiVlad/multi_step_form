@@ -22,10 +22,6 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
     const [togglePlan, setTogglePlan] = useState(true);
     const [chosenPlan, setChosenPlan] = useState({});
 
-    const handleNext = () => {
-        setItem(chosenPlan, "plan");
-    }
-
     const toggleActiveClass = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
     };
@@ -34,9 +30,12 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
         setTogglePlan(!togglePlan)
     }
 
-    useEffect(() => {
-        //write get the selected plan
+    const handleNext = () => {
+        setItem(chosenPlan, "plan");
+    }
 
+    useEffect(() => {
+        // for setting the selected plan
         if (!togglePlan) {
             setChosenPlan(planYearly[activeIndex])
         } else {
