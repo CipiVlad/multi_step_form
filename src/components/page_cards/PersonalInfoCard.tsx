@@ -30,21 +30,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
         }
 
         navigate(nextStep)
-
-
     };
-
-    //parse storage only when all inputfields are filled and pass them to addItem
-    // useEffect(() => {
-    //     if (inputs && inputs.name && inputs.email && inputs.phone) {
-    //         try {
-    //             setItem(inputs, "person");
-
-    //         } catch (error) {
-    //             console.error("Error setting localStorage:", error);
-    //         }
-    //     }
-    // }, [inputs]);
 
     //persist storage in localstorage on page reload, and get it from localstorage to display it on page 
     useEffect(() => {
@@ -69,14 +55,20 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
                         <label htmlFor="name">Name
                         </label>
                         <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
-                            id="name" placeholder="e.g. Stephen King"
+                            id="name" placeholder="e.g. Stephen King" required
                         />
+                        <span></span>
+
                         <label htmlFor="email">Email Address</label>
                         <input type="email" name="email" value={inputs.email || ""} onChange={handleChange}
                             id="email" placeholder="e.g. stephenking@lorem" required />
+                        <span></span>
+
                         <label htmlFor="phone">Phone Number</label>
                         <input type="tel" name="phone" value={inputs.phone || ""} onChange={handleChange}
                             id="phone" placeholder="e.g. +1 234 567 890" required />
+                        <span></span>
+
                         <nav className="navBar">
                             <button type="submit" className="btn">Next Step</button>
                             <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>

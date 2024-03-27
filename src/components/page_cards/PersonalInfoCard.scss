@@ -25,6 +25,17 @@
         font-weight: 500;
         color: $neutralCoolGray;
     }
+
+    input:focus:invalid+span::before {
+        content: 'This field is required';
+        color: $primaryStrawberryRed;
+        position: absolute;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin: 0 0 0 10px;
+        top: 32.5%;
+        left: 70%;
+    }
 }
 
 label {

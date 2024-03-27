@@ -10,64 +10,163 @@
     font-family: $fontFamily;
 }
 
-body {
+// body {
 
-    p {
-        font-size: $font-size-paragraph;
+p {
+    font-size: $font-size-paragraph;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $neutralAlabaster;
+
+    @media screen and (max-width: $layoutLenovo) {
+        .frame_container {
+            background-color: $neutralWhite;
+            width: 805px;
+            height: 608px;
+            border-radius: 18px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+            .main_container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                gap: 40px;
+
+            }
+        }
     }
 
+    @media screen and (max-width: $layoutDell) {
+        .frame_container {
+            background-color: $neutralWhite;
+            width: 950px;
+            height: 608px;
+            border-radius: 18px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+
+            .main_container {
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                // height: 100%;
+                // gap: 40px;
+
+
+                display: grid;
+                grid-template-columns: 0.1fr 10fr 20fr;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                gap: 15px 20px;
+            }
+        }
+    }
+
+
+
+}
+
+// }
+
+
+/* Mobile styles (max-width: 600px) */
+@media screen and (max-width: $layoutMobile) {
     .App {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: $neutralAlabaster;
+        display: block;
+        background-color: crimson;
 
-        @media screen and (max-width: $layoutLenovo) {
-            .frame_container {
-                background-color: $neutralWhite;
-                width: 805px;
-                height: 608px;
-                border-radius: 18px;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        .frame_container {
+            background-color: yellow;
+            width: 375px;
+            height: 90vh;
+            border-radius: 0px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-                .main_container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    gap: 40px;
+            .main_container {
+                display: block;
+                background-color: blue;
 
+
+                .spacer {
+                    display: none;
                 }
+
+
+                // sidebar styles
+                .sidebar_image {
+                    background-image: url('./assets/images/bg-sidebar-mobile.svg');
+                    background-repeat: no-repeat;
+                    width: 375px;
+                    height: 172px;
+                    margin-right: 100px;
+
+                    //center vertically
+                    .step_container {
+                        display: flex;
+                        gap: 30px;
+                        padding: 30px;
+
+
+                        .step_card {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            width: 100%;
+                            height: 100%;
+
+                            .step_number {
+                                border: 1px solid $primaryLightBlue;
+                                border-radius: 50%;
+                                width: 35px;
+                                height: 35px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                span {
+                                    color: $neutralAlabaster;
+                                    font-weight: 700;
+                                    font-size: 0.9rem;
+                                }
+                            }
+
+                            .step_number_active {
+
+                                background-color: $primaryLightBlue;
+
+
+                                span {
+                                    color: $primaryMarineBlue;
+                                }
+                            }
+                        }
+
+
+                        .step_description {
+                            display: none;
+
+                        }
+                    }
+                }
+
+
+                //stepcard_container
+                .stepcard_container {
+                    display: block;
+                    margin: 0 auto;
+                }
+
+
             }
         }
-
-        @media screen and (max-width: $layoutDell) {
-            .frame_container {
-                background-color: $neutralWhite;
-                width: 950px;
-                height: 608px;
-                border-radius: 18px;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-
-
-                .main_container {
-                    // display: flex;
-                    // justify-content: center;
-                    // align-items: center;
-                    // height: 100%;
-                    // gap: 40px;
-
-
-                    display: grid;
-                    grid-template-columns: 0.1fr 10fr 20fr;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                    gap: 15px 20px;
-                }
-            }
-        }
-
     }
+
+
 }
