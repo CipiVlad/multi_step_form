@@ -1,6 +1,7 @@
 //CSS
 
-» make required input fields work
+[IN PROGRESS]
+» make required input fields work >> use Hook : useForm() ??? 
 
 [DONE!]» on layout: decrease distance btw. label and input 
 
