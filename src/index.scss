@@ -80,18 +80,19 @@ p {
 @media screen and (max-width: $layoutMobile) {
     .App {
         display: block;
-        background-color: crimson;
+        background-color: $neutralWhite;
+        height: 100vh;
 
         .frame_container {
-            background-color: yellow;
+            background-color: $neutralMagnolia;
             width: 375px;
             height: 90vh;
             border-radius: 0px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: none;
 
             .main_container {
                 display: block;
-                background-color: blue;
+                background-color: none;
 
 
                 .spacer {
@@ -110,8 +111,9 @@ p {
                     //center vertically
                     .step_container {
                         display: flex;
-                        gap: 30px;
-                        padding: 30px;
+                        gap: 20px;
+                        position: absolute;
+                        left: 60px;
 
 
                         .step_card {
@@ -160,7 +162,81 @@ p {
                 //stepcard_container
                 .stepcard_container {
                     display: block;
-                    margin: 0 auto;
+                    margin: -73px auto;
+                    padding: 20px;
+                    background-color: $neutralWhite;
+                    width: 335px;
+                    height: 375px;
+                    border-radius: 8px;
+                    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+
+                    .stepcard_description {
+
+                        .title {
+
+                            color: $primaryMarineBlue;
+                            font-size: 1.5em;
+                            font-weight: 700;
+                            margin: 2vh 0;
+                        }
+                    }
+
+
+
+                    // form styles
+
+                    .form {
+                        display: block;
+                        gap: 10px;
+                        margin: 0 0 5vh 0;
+
+                        input {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: hsl(213, 96%, 18%);
+                            border: hsl(229, 24%, 87%) 1px solid;
+                            border-radius: 4px;
+                            padding: 10px 10px;
+                            margin: 0.8vh 0 1vh 0;
+                            cursor: pointer;
+                            width: 100%;
+
+                            &::placeholder {
+                                font-weight: 500;
+                                color: $neutralCoolGray;
+                                font-size: 15px;
+                            }
+                        }
+
+
+                        label {
+                            font-size: 12px;
+                        }
+                    }
+
+                    nav {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        align-self: end;
+                        margin-top: 5vh;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+
+                        .btn {
+                            color: hsl(0, 0%, 100%);
+                            font-size: 0.9rem;
+                            font-weight: 500;
+                            border: none;
+                            border-radius: 3px;
+                            padding: 15px 0px;
+                            width: 100px;
+                            height: 42px;
+                        }
+
+                    }
+
                 }
 
 
