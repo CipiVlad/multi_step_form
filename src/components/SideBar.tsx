@@ -18,8 +18,6 @@ const SideBar = () => {
 
     useEffect(() => {
         const matchingStep = steps.find(step => step.endpoint === pathname);
-        console.log(matchingStep);
-
         setActiveIndex(matchingStep ? steps.indexOf(matchingStep) : null);
 
         //for Thank You Page where all steps are completed 
@@ -29,7 +27,6 @@ const SideBar = () => {
 
     }, [pathname]);
 
-    console.log(activeIndex)
     return (
         <>
             <div className='sidebar_image'>

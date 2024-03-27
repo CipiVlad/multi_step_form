@@ -2,9 +2,9 @@
 
 » make required input fields work
 
-» on layout: decrease distance btw. label and input 
+[DONE!]» on layout: decrease distance btw. label and input 
 
-» Sidebar scss: [Highlight each step on time]
+[DONE!]» Sidebar scss: [Highlight each step on time]
 
 » Maek Toggle Button smaller
 
