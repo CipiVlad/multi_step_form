@@ -22,27 +22,27 @@ const FinishCard = ({ getItem, setItem }: Props) => {
     const [addon, setAddon] = useState([])
 
 
-    // //for rendering the price in monthly or yearly
-
+    //for rendering the price in monthly or yearly
     const planType = plan.price?.includes("mo") ? "Monthly" : "Yearly";
 
-    // //for rendering price extended with mo or yr
-    // const planPriceType = plan.price.includes("mo") ? "mo" : "yr";
+    //for rendering price extended with mo or yr
+    const planPriceType = plan.price?.includes("mo") ? "mo" : "yr";
 
-    // //for rendering per month or per year
+    //for rendering per month or per year
     const per = plan.price?.includes("mo") ? "(per month)" : "(per year)";
 
-    // //for converting string to number and removing the dollar sign
-    // // using replace method with regular expression
-    // const planPrice = Number(api.price.replace(/[^\d.-]/g, ''));
+    // for converting string to number and removing the dollar sign
+    // using replace method with regular expression
+    const planPrice = Number(plan.price?.replace(/[^\d.-]/g, ''));
 
-    // //for adding up all the addons
-    // const addOnPrice = api.addons.map((addon) => {
-    //     return Number(addon.price.replace(/[^\d.-]/g, ''))
-    // }).reduce((a: number, b: number) => a + b, 0)
+    // for adding up all the addons
+    const addOnPrice = addon.price?.map((price, index) => {
+        return Number(price.replace(/[^\d.-]/g, ''))
+    }).reduce((a: number, b: number) => a + b, 0);
 
-    // //for calculating the total
-    // const calcTotal = planPrice + addOnPrice;
+    //for calculating the total
+    const calcTotal = planPrice + addOnPrice;
+
     useEffect(() => {
         getItem("plan");
         getItem("addon")
@@ -67,7 +67,9 @@ const FinishCard = ({ getItem, setItem }: Props) => {
                     </div>
                     <p>{plan.price}</p>
                 </div>
+
                 <div className="line"></div>
+
                 {
                     addon.name?.map((element, index) => (
                         <div className="summary_addons">
@@ -78,12 +80,13 @@ const FinishCard = ({ getItem, setItem }: Props) => {
                         </div>
                     ))
                 }
-
             </div>
 
             <div className="summary_total">
-                <p>Total {per}</p>
-                <p> {plan.price}</p>
+                <>
+                    <p>Total {per}</p>
+                    <p> ${calcTotal}/{planPriceType}</p>
+                </>
 
             </div>
 
