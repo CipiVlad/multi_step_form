@@ -279,9 +279,11 @@ p {
                     padding: 20px;
                     background-color: hsl(0, 0%, 100%);
                     width: 335px;
-                    height: 485px;
+                    height: 480px;
                     border-radius: 8px;
                     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+                    overflow-y: scroll;
+
 
                     .plan_description {
 
@@ -295,8 +297,9 @@ p {
                             flex-direction: column;
                             justify-content: space-between;
                             align-items: center;
-                            gap: 10px;
-                            padding: 20px 0;
+                            gap: 20px;
+                            padding: 0px;
+
 
                             .plan_card {
                                 display: flex;
@@ -310,7 +313,7 @@ p {
                                 .plan_card_description p:nth-child(1) {
                                     color: $primaryMarineBlue;
                                     font-weight: 500;
-                                    margin-bottom: 1vh;
+                                    margin-bottom: 4px;
                                 }
 
                                 //second p in .plan_card_description
@@ -318,6 +321,7 @@ p {
                                     color: $neutralCoolGray;
                                     font-size: smaller;
                                     font-weight: 400;
+                                    margin-bottom: 2px;
                                 }
 
                                 .plan_card_description p:nth-child(3) {
@@ -339,9 +343,47 @@ p {
                             position: fixed;
                             bottom: 6em;
                             right: 6em;
+
+                            .active {
+                                color: hsl(213, 96%, 18%);
+                                font-weight: 500;
+                                font-size: 0.8em;
+                            }
+
+                            .inactive {
+                                font-size: 0.8em;
+                            }
                         }
 
 
+                    }
+
+                    .add_ons_card {
+                        width: 100%;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        margin: 1vh;
+                        height: 60px;
+
+                        div:nth-child(2) {
+                            p:nth-child(1) {
+                                color: $primaryMarineBlue;
+                                font-size: 0.9em;
+                                font-weight: 500;
+                            }
+
+                            p:nth-child(2) {
+                                color: $neutralCoolGray;
+                                font-size: 0.8em;
+                                font-weight: 400;
+                            }
+                        }
+
+                        div:nth-child(3) p {
+                            color: $primaryPurplishBlue;
+                            font-weight: 400;
+                            font-size: 0.7em;
+                        }
                     }
                 }
             }

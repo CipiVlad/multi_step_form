@@ -58,11 +58,12 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     }
 
     return (
-        <div className="stepcard_container">
+        <div className="stepcard_container media_mobile">
             <div className="stepcard_description">
                 <h1 className="title">{title}</h1>
                 <p className="subtitle">{subtitle}</p>
             </div>
+
             {
                 api.map((add_on, index) => (
                     <div className={`${addonTitle && addonTitle.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
@@ -87,8 +88,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
 
                         <div className="price">
-                            <p>{add_on.price[priceType]}</p>
-                            {/* <p>{priceDisplay[1]}</p> */}
+                            <p>+{add_on.price[priceType]}</p>
                         </div>
                     </div>
                 ))
