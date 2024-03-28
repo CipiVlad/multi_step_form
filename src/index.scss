@@ -83,6 +83,8 @@ p {
         background-color: $neutralWhite;
         height: 100vh;
 
+
+
         .frame_container {
             background-color: $neutralMagnolia;
             width: 375px;
@@ -285,6 +287,7 @@ p {
                     overflow-y: scroll;
 
 
+
                     .plan_description {
 
                         display: grid;
@@ -422,7 +425,6 @@ p {
                         }
                     }
 
-                    // page 5
                     .thankyou_container {
 
                         font-size: small;
@@ -431,7 +433,7 @@ p {
                         justify-content: center;
                         align-items: center;
                         gap: 17px;
-                        margin: 0 auto;
+                        margin: 10vh 0;
                         padding: 0;
 
                         h1 {
@@ -453,7 +455,11 @@ p {
 
             }
         }
+
+
     }
+
+
 
 
 }

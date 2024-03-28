@@ -1,7 +1,7 @@
 //CSS
 
 [IN PROGRESS]
-» make required input fields work >> use Hook : useForm() ??? 
+[DONE!]» make required input fields work
 
 [DONE!]» on layout: decrease distance btw. label and input 
 
@@ -9,7 +9,16 @@
 
 [DONE!]» Maek Toggle Button smaller
 
-» @media-queries: responsive design
+[DONE!]» @media-queries: responsive design
+
+[] » in App.tsx: import inline style, useState, useEffect etc. from module 
+
+[] »in responsive design make sidebar numbers inactive when clicked
+
+[] »fix bug: when rendering pages, number 1 in sidebar quickly apears / disapears
+
+[] » in desktop mode select plan page <p> are black - should be darkblue
+
 
 
 //JS
