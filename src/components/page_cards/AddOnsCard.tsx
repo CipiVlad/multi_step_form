@@ -95,7 +95,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
             }
 
-            <nav className="navBar">
+            <nav className="nav_rest_pages">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
 
                 <Link to={`${nextStep}`} className="btn" onClick={() => setItemStorage()} >

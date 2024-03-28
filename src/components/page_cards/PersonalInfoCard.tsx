@@ -69,7 +69,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
                             id="phone" placeholder="e.g. +1 234 567 890" required />
                         <span></span>
 
-                        <nav className="navBar">
+                        <nav className="nav_firstpage">
                             <button type="submit" className="btn">Next Step</button>
                             <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
                             {/* <Link to={`${nextStep}`} className="btn">Next Step</Link> */}

@@ -45,7 +45,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
     }, [activeIndex, togglePlan]);
 
     return (
-        <div className="stepcard_container">
+        <div className="stepcard_container media_mobile">
             <div className="stepcard_description">
                 <h1 className='title'>{title}</h1>
                 <p className='subtitle'>{subtitle}</p>
@@ -67,7 +67,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                                 <div className="plan_icon">
                                     <img src={icons[plan.id - 1].name} alt={icons[plan.id - 1].alt} />
                                 </div>
-                                <div className="plan_description">
+                                <div className="plan_card_description">
                                     <p>{plan.title}</p>
                                     <p>{plan.price}</p>
                                 </div>
@@ -85,7 +85,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                                 <div className="plan_icon">
                                     <img src={icons[plan.id - 1].name} alt={icons[plan.id - 1].alt} />
                                 </div>
-                                <div className="plan_description">
+                                <div className="plan_card_description">
                                     <p>{plan.title}</p>
                                     <p>{plan.price}</p>
                                     <p>{plan.description}</p>
@@ -110,7 +110,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
                     >{yearly}</p>
                 </div>
             </div>
-            <nav className="navBar">
+            <nav className="nav_rest_pages">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
                 <Link to={`${nextStep}`} className="btn" onClick={handleNext}>Next Step</Link>
 
