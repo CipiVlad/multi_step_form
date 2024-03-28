@@ -60,8 +60,8 @@ const FinishCard = ({ getItem, setItem }: Props) => {
 
 
     return (
-        <div className="stepcard_container">
-            <div className="stepcard_description">
+        <div className="stepcard_container media_mobile">
+            <div className="stepcard_description ">
                 <h1 className="title">{finish.title}</h1>
                 <p className="subtitle">{finish.subtitle}</p>
             </div>

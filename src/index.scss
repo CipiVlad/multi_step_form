@@ -177,7 +177,7 @@ p {
                             color: $primaryMarineBlue;
                             font-size: 1.5em;
                             font-weight: 700;
-                            margin: 2vh 0;
+                            margin: 1vh 0;
                         }
                     }
 
@@ -355,9 +355,9 @@ p {
                             }
                         }
 
-
                     }
 
+                    // page 3
                     .add_ons_card {
                         width: 100%;
                         border-radius: 8px;
@@ -385,7 +385,72 @@ p {
                             font-size: 0.7em;
                         }
                     }
+
+                    // page 4 finishing
+
+                    .summary_container {
+                        margin-bottom: 2vh;
+
+                        .summary_plan {
+                            div p {
+                                // color: yellow;
+                                font-weight: 500;
+                                font-size: 0.9em;
+                            }
+
+                            a {
+                                color: $neutralCoolGray;
+                                font-weight: 400;
+                                font-size: 0.9em;
+                            }
+                        }
+
+                        .summary_addons p {
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    .summary_total {
+                        p:nth-child(1) {
+                            font-size: 0.8rem;
+                        }
+
+                        p:nth-child(2) {
+                            color: hsl(243, 100%, 62%);
+                            font-weight: 700;
+                            font-size: medium;
+                        }
+                    }
+
+                    // page 5
+                    .thankyou_container {
+
+                        font-size: small;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 17px;
+                        margin: 0 auto;
+                        padding: 0;
+
+                        h1 {
+                            font-size: x-large;
+                        }
+
+                        p {
+                            line-height: 1.3;
+                        }
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
                 }
+
+
+
             }
         }
     }

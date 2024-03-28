@@ -58,7 +58,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     }
 
     return (
-        <div className="stepcard_container media_mobile">
+        <div className="stepcard_container media_mobile stepacard_container_addon">
             <div className="stepcard_description">
                 <h1 className="title">{title}</h1>
                 <p className="subtitle">{subtitle}</p>
