@@ -10,10 +10,10 @@ const SideBar = () => {
     const { pathname } = useLocation();
 
     //setting the active index
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState<null | number>(null);
 
     const toggleActiveClass = (index: number) => {
-        setActiveIndex((index === activeIndex ? null : index) as SetStateAction<null>);
+        setActiveIndex((index === activeIndex ? null : index) as SetStateAction<null | number>);
     };
 
     useEffect(() => {
