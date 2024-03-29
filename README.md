@@ -2,7 +2,8 @@
 
 # Tech - Stack
 vscode, React + TS, SCSS, git, browser local Storage,jest testing
-npm: react-router-dom, sass, sass-loader 
+npm: react-router-dom, sass, sass-loader
+Browsers: Brave, Google Chrome 
 
 # App Design
 * folder structure

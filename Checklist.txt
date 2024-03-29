@@ -33,3 +33,6 @@
 
 // Project Info
 [] » explain in README.md how I approached this project --> check out README.md template from frontend mentor
+
+// Deploy
+[] github actions // netlify // vercel

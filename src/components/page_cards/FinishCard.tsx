@@ -2,7 +2,9 @@ import { Link } from "react-router-dom"
 import { finish } from "../../data/finish.module"
 import './FinishCard.scss'
 import { useEffect, useState } from "react"
+
 type Props = {
+
     title: string,
     subtitle: string,
     add_ons: string[] | boolean[]
@@ -23,6 +25,8 @@ const FinishCard = ({ getItem, setItem }: Props) => {
 
     //for rendering the price in monthly or yearly
     const planType = plan.price?.includes("mo") ? "Monthly" : "Yearly";
+
+
 
     //for rendering price extended with mo or yr
     const planPriceType = plan.price?.includes("mo") ? "mo" : "yr";
@@ -79,7 +83,7 @@ const FinishCard = ({ getItem, setItem }: Props) => {
 
                 {
                     addon.name?.map((element, index) => (
-                        <div className="summary_addons">
+                        <div className="summary_addons" key={index}>
                             <>
                                 <p key={index}>{element} <br /></p>
                             </>
