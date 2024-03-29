@@ -11,12 +11,7 @@ const PersonalInfo = () => {
     return (
         <>
             <div className="spacer"></div>
-            <SideBar
-                title={personalInfo?.title}
-                subtitle={personalInfo?.subtitle}
-                back={personalInfo?.back}
-                nextStep={personalInfo?.nextStep}
-            />
+            <SideBar />
 
             <PersonalInfoCard
                 title={personalInfo?.title}

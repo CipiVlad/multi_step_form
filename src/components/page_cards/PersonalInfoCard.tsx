@@ -12,8 +12,7 @@ type Props = {
 }
 
 const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }: Props) => {
-    const [inputs, setInputs] = useState({})
-
+    const [inputs, setInputs] = useState({ name: '', email: '', phone: '' });
     const navigate = useNavigate()
     const handleChange = ({ target: { name, value } }: { target: { name: string, value: string } }) => setInputs(inputs => ({ ...inputs, [name]: value }));
 

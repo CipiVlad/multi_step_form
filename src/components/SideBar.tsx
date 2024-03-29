@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { SetStateAction } from 'react';
 
+
 const SideBar = () => {
 
     //get current pathname
