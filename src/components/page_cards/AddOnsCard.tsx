@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 type Props = {
     title: string,
     subtitle: string,
-    add_ons: []
+    add_ons: any
     name: string
     description: string
     price: string[]
@@ -59,6 +59,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     const setItemStorage = () => {
         setItem({ price: addon, name: addonTitle }, "addon")
     }
+
 
     return (
         <div className="stepcard_container media_mobile "

@@ -7,25 +7,6 @@ const Finish = () => {
 
     const [setItem, getItem] = useContext(StorageContext) || []
 
-    // const sum = {
-    //     "title": "Arcade",
-    //     "price": "$9/mo",
-    //     "addons": [{
-    //         "title": "Online service",
-    //         "price": "$1/mo"
-    //     },
-    //     {
-    //         "title": "Larger storage",
-    //         "price": "$2/mo"
-    //     },
-    //     {
-    //         "title": "Customizable profile",
-    //         "price": "$2/mo"
-    //     }]
-    // }
-
-
-
     return (
         <>
             <div className="spacer"></div>
@@ -44,7 +25,6 @@ const Finish = () => {
                 nextStep={finish.nextStep}
                 back={finish.back}
                 changePlan={finish.changePlan}
-                // sum={sum}
                 setItem={setItem}
                 getItem={getItem}
             />
