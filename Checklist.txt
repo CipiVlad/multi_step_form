@@ -1,7 +1,13 @@
+//GENERALS
+[]  remove console.logs
+
 //CSS
 
-[IN PROGRESS]
-[DONE!]» make required input fields work
+[DONE!]» in add-ons: input:checkbox style of marker needs to be adapted as well as container height
+
+[]» in App.tsx: import inline style, useState, useEffect etc. from module 
+
+[DONE!] » make required input fields work
 
 [DONE!]» on layout: decrease distance btw. label and input 
 
@@ -11,19 +17,19 @@
 
 [DONE!]» @media-queries: responsive design
 
-[] » in App.tsx: import inline style, useState, useEffect etc. from module 
 
-[] »in responsive design make sidebar numbers inactive when clicked
+[DONE!]»in responsive design make sidebar numbers inactive when clicked --> pointer-events: none;
 
-[] »fix bug: when rendering pages, number 1 in sidebar quickly apears / disapears
+[DONE!]»fix bug: when rendering pages, number 1 in sidebar quickly apears / disapears
 
-[] » in desktop mode select plan page <p> are black - should be darkblue
-
+[DONE!]» in desktop mode select plan page <p> are black - should be darkblue
 
 
 //JS
 
-» TS Types Check
+[] » TS Types Check
 
-» JEST Testing
+[] » JEST Testing
 
+// Project Info
+[] » explain in README.md how I approached this project --> check out README.md template from frontend mentor

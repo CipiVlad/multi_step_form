@@ -22,7 +22,6 @@ function App() {
   };
 
   const { pathname } = useLocation()
-  console.log(pathname);
 
   const [addProps, setAddProps] = useState(false)
   const [height, setHeight] = useState(style)

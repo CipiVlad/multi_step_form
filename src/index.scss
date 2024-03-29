@@ -10,8 +10,6 @@
     font-family: $fontFamily;
 }
 
-// body {
-
 p {
     font-size: $font-size-paragraph;
 }
@@ -52,13 +50,6 @@ p {
 
 
             .main_container {
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
-                // height: 100%;
-                // gap: 40px;
-
-
                 display: grid;
                 grid-template-columns: 0.1fr 10fr 20fr;
                 justify-content: center;
@@ -73,17 +64,12 @@ p {
 
 }
 
-// }
-
-
-/* Mobile styles (max-width: 600px) */
+/* Mobile styles (max-width: 375px) */
 @media screen and (max-width: $layoutMobile) {
     .App {
         display: block;
         background-color: $neutralWhite;
         height: 100vh;
-
-
 
         .frame_container {
             background-color: $neutralMagnolia;
@@ -133,6 +119,7 @@ p {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
+                                pointer-events: none;
 
                                 span {
                                     color: $neutralAlabaster;
@@ -173,6 +160,7 @@ p {
                     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 
                     .stepcard_description {
+                        margin-bottom: 4vh;
 
                         .title {
 
@@ -209,6 +197,49 @@ p {
                                 color: $neutralCoolGray;
                                 font-size: 15px;
                             }
+                        }
+
+                        input:focus {
+                            outline: none;
+                            border: $primaryPurplishBlue 1px solid;
+                            font-size: $font-size-paragraph;
+
+                            &:invalid {
+                                border: $primaryStrawberryRed 1px solid;
+                            }
+                        }
+
+                        input:focus:invalid+span:nth-of-type(1):before {
+                            content: 'This field is required';
+                            color: $primaryStrawberryRed;
+                            position: absolute;
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                            margin: 0 0 0 0;
+                            top: 225px;
+                            left: 55%;
+                        }
+
+                        input:focus:invalid+span:nth-of-type(2):before {
+                            content: 'This field is required';
+                            color: $primaryStrawberryRed;
+                            position: absolute;
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                            margin: 0 0 0 0;
+                            top: 295px;
+                            left: 55%;
+                        }
+
+                        input:focus:invalid+span:nth-of-type(3):before {
+                            content: 'This field is required';
+                            color: $primaryStrawberryRed;
+                            position: absolute;
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                            margin: 0 0 0 0;
+                            top: 365px;
+                            left: 55%;
                         }
 
 
@@ -367,17 +398,21 @@ p {
                         cursor: pointer;
                         margin: 1vh;
                         height: 60px;
+                        padding: 14px;
 
                         div:nth-child(2) {
+                            // width: 80% !important;
+                            width: 55% !important;
+
                             p:nth-child(1) {
                                 color: $primaryMarineBlue;
-                                font-size: 0.9em;
+                                font-size: 14px;
                                 font-weight: 500;
                             }
 
                             p:nth-child(2) {
                                 color: $neutralCoolGray;
-                                font-size: 0.8em;
+                                font-size: 0.9em;
                                 font-weight: 400;
                             }
                         }

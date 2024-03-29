@@ -15,7 +15,6 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
     const [inputs, setInputs] = useState({})
 
     const navigate = useNavigate()
-
     const handleChange = ({ target: { name, value } }: { target: { name: string, value: string } }) => setInputs(inputs => ({ ...inputs, [name]: value }));
 
     const handleSubmit = (event: { preventDefault: () => void; }) => {
@@ -71,8 +70,6 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
 
                         <nav className="nav_firstpage">
                             <button type="submit" className="btn">Next Step</button>
-                            <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-                            {/* <Link to={`${nextStep}`} className="btn">Next Step</Link> */}
                         </nav>
                     </form>
                 </div>

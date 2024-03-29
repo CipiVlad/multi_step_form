@@ -67,9 +67,6 @@
                 font-size: 0.9rem;
             }
 
-            //only first paragraph
-
-
         }
     }
 }
@@ -88,7 +85,7 @@ right side main_container
     gap: inherit;
 
     .stepcard_description {
-        margin-bottom: 4vh;
+        // margin-bottom: 4vh;
 
         .title {
             color: $primaryMarineBlue;
@@ -185,22 +182,13 @@ right side main_container
                     justify-content: center;
                     align-items: center;
 
-                    span {
-                        color: $neutralAlabaster;
+                    span::before {
+                        color: $primaryMarineBlue;
                         font-weight: 700;
                         font-size: 0.9rem;
                     }
-
-                    &:hover {
-                        background-color: $primaryLightBlue;
-                    }
-
-                    &:hover span {
-                        color: $primaryMarineBlue;
-                    }
                 }
 
-                .step_description {}
             }
         }
     }

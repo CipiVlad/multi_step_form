@@ -1,5 +1,7 @@
+# 
+
 # Tech - Stack
-vscode, React + TS, SCSS, git, 
+vscode, React + TS, SCSS, git, browser local Storage,jest testing
 npm: react-router-dom, sass, sass-loader 
 
 # App Design
@@ -30,11 +32,10 @@ npm: react-router-dom, sass, sass-loader
         --> this container centers the changing data
         --> inside of this container it depends what will  be displayed
 
-    -models
     -assests
         |_fonts
         |_images
     -data
-        |_db.json
+        |_modules
     -sass
         |_ _variables.scss

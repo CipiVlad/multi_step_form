@@ -99,7 +99,9 @@ const FinishCard = ({ getItem, setItem }: Props) => {
 
             <nav className="nav_rest_pages">
                 <Link to={`${finish.back}`}>{finish.back ? "Go Back" : ""}</Link>
-                <Link to={`${finish.nextStep}`} className="btn">Confirm</Link>
+                <Link to={`${finish.nextStep}`} className="btn"
+
+                >Confirm</Link>
             </nav>
         </div>
     )

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './AddOnsCard.scss'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 type Props = {
     title: string,
@@ -19,6 +19,9 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     const [api, setApi] = useState([])
     const [addon, setAddon] = useState([])
     const [addonTitle, setAddonTitle] = useState([])
+    const { pathname } = useLocation()
+    const [sum, setSum] = useState([{}])
+    const [priceType, setPriceType] = useState('')
 
     useEffect(() => {
         setApi(add_ons)
@@ -26,14 +29,12 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
     }, []);
 
-    const [sum, setSum] = useState([{}])
     useEffect(() => {
         setTimeout(() => {
             setSum(getItem("plan"))
         }, 50)
     }, []);
 
-    const [priceType, setPriceType] = useState('')
     useEffect(() => {
         setTimeout(() => {
             setPriceType(getItem("plan").price.includes("mo") ? 'monthly' : 'yearly');
@@ -58,7 +59,10 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     }
 
     return (
-        <div className="stepcard_container media_mobile stepacard_container_addon">
+        <div className="stepcard_container media_mobile "
+
+            style={pathname === "/add-ons" && window.innerWidth < 376 ? { height: '385px' } : { height: 90 + '%' }}
+        >
             <div className="stepcard_description">
                 <h1 className="title">{title}</h1>
                 <p className="subtitle">{subtitle}</p>
@@ -97,10 +101,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
 
             <nav className="nav_rest_pages">
                 <Link to={`${back}`}>{back ? "Go Back" : ""}</Link>
-
                 <Link to={`${nextStep}`} className="btn" onClick={() => setItemStorage()} >
-
-                    {/* onClick={() => sum.push(addon, addonTitle)} */}
                     Next Step
                 </Link>
             </nav>

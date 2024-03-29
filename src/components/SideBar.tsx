@@ -10,19 +10,21 @@ const SideBar = () => {
     const { pathname } = useLocation();
 
     //setting the active index
-    const [activeIndex, setActiveIndex] = useState(null || 0);
+    const [activeIndex, setActiveIndex] = useState(null);
 
     const toggleActiveClass = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
     };
 
     useEffect(() => {
-        const matchingStep = steps.find(step => step.endpoint === pathname);
-        setActiveIndex(matchingStep ? steps.indexOf(matchingStep) : null);
-        //for Thank You Page where all steps are completed 
-        if (!matchingStep) {
-            setActiveIndex(3)
-        }
+        setTimeout(() => {
+            const matchingStep = steps.find(step => step.endpoint === pathname);
+            setActiveIndex(matchingStep ? steps.indexOf(matchingStep) : null);
+            //for Thank You Page where all steps are completed 
+            if (!matchingStep) {
+                setActiveIndex(3)
+            }
+        }, 200)
 
 
     }, [pathname]);

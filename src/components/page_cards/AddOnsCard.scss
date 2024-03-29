@@ -16,6 +16,7 @@
         width: 20px;
         height: 20px;
         border-radius: 2.5px;
+        accent-color: $primaryPurplishBlue;
     }
 
     // if input is not checked set border color
@@ -32,6 +33,7 @@
     label p:nth-child(2) {
         color: $neutralCoolGray;
         font-weight: 400;
+        font-size: 14px;
     }
 
 
@@ -44,7 +46,6 @@
 
 .add_ons_card:hover {
     border: 1px solid $primaryMarineBlue;
-    background-color: $neutralMagnolia;
 }
 
 .add_ons_card-active {
