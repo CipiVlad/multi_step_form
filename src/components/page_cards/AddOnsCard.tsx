@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 type Props = {
     title: string,
     subtitle: string,
-    add_ons: string[] | boolean[]
+    add_ons: []
     name: string
     description: string
     price: string[]
@@ -17,8 +17,8 @@ type Props = {
 
 const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem }: Props) => {
     const [api, setApi] = useState([])
-    const [addon, setAddon] = useState([])
-    const [addonTitle, setAddonTitle] = useState([])
+    const [addon, setAddon] = useState<string[]>([]);
+    const [addonTitle, setAddonTitle] = useState<string[]>([]);
     const { pathname } = useLocation()
     const [sum, setSum] = useState([{}])
     const [priceType, setPriceType] = useState('')
@@ -41,18 +41,20 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
         }, 50)
     }, [sum]);
 
-    const handleChange = (e, index) => {
-        const activeData = document.getElementById(index).checked
-        if (activeData === true) {
-            setAddon(prevState => [...prevState, e.target.value])
-            setAddonTitle(prevState => [...prevState, e.target.name])
+    const handleChange = (e: any, index: string) => {
+        const element = document.getElementById(index) as HTMLInputElement;
+        if (element && element.tagName === 'INPUT') {
+            const activeData = element.checked;
 
-        } else {
-            setAddon(addon.filter(item => item !== e.target.value))
-            setAddonTitle(addonTitle.filter(item => item !== e.target.name))
+            if (activeData === true) {
+                setAddon(prevState => [...prevState, e.target.value]);
+                setAddonTitle(prevState => [...prevState, e.target.name]);
+            } else {
+                setAddon(addon.filter(item => item !== e.target.value));
+                setAddonTitle(addonTitle.filter(item => item !== e.target.name));
+            }
         }
-    }
-
+    };
 
     const setItemStorage = () => {
         setItem({ price: addon, name: addonTitle }, "addon")
@@ -69,16 +71,16 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
             </div>
 
             {
-                api.map((add_on, index) => (
+                api.map((add_on: any, index) => (
                     <div className={`${addonTitle && addonTitle.includes(add_on.name) ? "add_ons_card add_ons_card-active" : "add_ons_card"}`} key={index} >
                         <div>
 
                             <input
-                                id={index}
+                                id={index.toString()}
                                 type="checkbox"
                                 name={add_on.name}
                                 value={add_on.price[priceType]}
-                                onChange={(e) => handleChange(e, index)}
+                                onChange={(e) => handleChange(e, index.toString())}
                             />
 
                         </div>
