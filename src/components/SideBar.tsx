@@ -2,7 +2,7 @@ import './SideBar.scss'
 import { steps } from '../data/steps.module'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-
+import { SetStateAction } from 'react';
 
 const SideBar = () => {
 
@@ -12,8 +12,8 @@ const SideBar = () => {
     //setting the active index
     const [activeIndex, setActiveIndex] = useState(null);
 
-    const toggleActiveClass = (index) => {
-        setActiveIndex(index === activeIndex ? null : index);
+    const toggleActiveClass = (index: number) => {
+        setActiveIndex((index === activeIndex ? null : index) as SetStateAction<null>);
     };
 
     useEffect(() => {

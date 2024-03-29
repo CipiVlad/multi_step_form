@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-
-
-type StorageContextValue = [setItem: (item: any) => void, getItem: () => any];
+// Create the context
+type StorageContextValue = [setItem: (item: string) => void, getItem: () => void];
 
 // Create the storage context
+// @explain:  <StorageContextValue>([() => { }, () => { }]);
+// the functions provided are essentially placeholders and don't perform any meaningful operations.
+
 export const StorageContext = React.createContext<StorageContextValue>([() => { }, () => { }]);
 
 const StorageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const personInfo = "person"
-    const planInfo = "plan"
-    const addon = "addon"
-
-
-    const setItem = (item: any, personInfo?: string, planInfo?: string, addon?: string) => {
-        localStorage.setItem(personInfo || planInfo || addon, JSON.stringify(item));
+    const setItem = (item: string, personInfo?: string | null, planInfo?: string | null, addon?: string | null) => {
+        try {
+            if (!personInfo && !planInfo && !addon) {
+                throw new Error("Must provide a storage key");
+            }
+            localStorage.setItem((personInfo || planInfo || addon)!, JSON.stringify(item));
+        } catch (error) {
+            console.error("Error setting localStorage item:", error);
+        }
     };
 
     const getItem = (personInfo?: string, planInfo?: string, addon?: string) => {
