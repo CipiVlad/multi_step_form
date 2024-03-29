@@ -22,7 +22,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
     const [togglePlan, setTogglePlan] = useState(true);
     const [chosenPlan, setChosenPlan] = useState({});
 
-    const toggleActiveClass = (index) => {
+    const toggleActiveClass = (index: any) => {
         setActiveIndex(index === activeIndex ? null : index);
     };
 
@@ -58,7 +58,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
 
                     {togglePlan ? (
 
-                        planMonthly.map((plan, index) => (
+                        planMonthly.map((plan: any, index: number) => (
                             <div
                                 className={`plan_card${index === activeIndex ? ' active' : ''}`}
                                 key={plan.id}
@@ -76,7 +76,7 @@ const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yea
 
                     ) : (
 
-                        planYearly.map((plan, index) => (
+                        planYearly.map((plan: any, index: number) => (
                             <div
                                 className={`plan_card${index === activeIndex ? ' active' : ''}`}
                                 key={plan.id}
