@@ -10,8 +10,6 @@ import StorageProvider from './contexts/StorageProvider'
 import { useEffect, useState } from 'react'
 import PageNotFound from './components/page_cards/PageNotFound'
 
-
-
 function App() {
 
   const style: any = {
@@ -21,22 +19,8 @@ function App() {
       height: '100vh',
     },
   };
-
   const { pathname } = useLocation()
-
-  const [addProps, setAddProps] = useState(false)
   const [height, setHeight] = useState(style)
-
-  //helper function
-
-  useEffect(() => {
-    if (pathname === "/thank-you") {
-      setAddProps(true)
-    } else {
-      setAddProps(false)
-    }
-  }, [pathname])
-
 
   return (
     <StorageProvider>

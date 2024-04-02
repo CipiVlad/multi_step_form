@@ -206,3 +206,5 @@ Keep working on:
 - Frontend Mentor - [@CipiVlad](https://www.frontendmentor.io/profile/yourusername)
 - DEV.to - [https://dev.to/cipivlad](https://www.twitter.com/yourusername)
 
+### Tags
+- #react, #typescript, #scss, #vite, #github, #git, #form, #react-router, #jest
