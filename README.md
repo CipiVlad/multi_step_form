@@ -20,7 +20,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 
 ### Screenshot
 
-![mobile_and_desktop_version](./src/assets/screenshots/personal_info_desktop.png)
+![mobile_and_desktop_version](./src/assets/screenshot/multiform_webapp.png)
 
 ### The challenge
 
