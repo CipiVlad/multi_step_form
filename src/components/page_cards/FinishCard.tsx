@@ -59,7 +59,6 @@ const FinishCard = ({ getItem }: Props) => {
     }, []);
 
     function handleConfirmation() {
-        () => localStorage.clear()
         setTimeout(() => {
             navigate('/')
         }, 10000)

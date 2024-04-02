@@ -9,6 +9,9 @@ const ThankYouCard = () => {
     const [redirectInfo, setRedirectInfo] = useState('')
 
     useEffect(() => {
+        //wipe out all local storage
+        localStorage.clear()
+        // redirect after 10 seconds
         const timer = setTimeout(() => {
             setRedirectInfo(`You'll be redirected to the homepage in ${seconds - 1} seconds`)
             setSeconds(seconds - 1)
