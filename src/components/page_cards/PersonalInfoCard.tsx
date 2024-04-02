@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import './PersonalInfoCard.scss'
 import { useEffect, useState } from "react"
+
 type Props = {
     title: string
     subtitle: string

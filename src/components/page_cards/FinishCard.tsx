@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { finish } from "../../data/finish.module"
 import './FinishCard.scss'
 import { useEffect, useState } from "react"
@@ -48,12 +48,22 @@ const FinishCard = ({ getItem }: Props) => {
     //for calculating the total
     const calcTotal = planPrice + addOnPrice;
 
+    //navigation
+    const navigate = useNavigate();
+
     useEffect(() => {
         getItem("plan");
         getItem("addon")
         setPlan(getItem("plan"))
         setAddon(getItem("addon"))
     }, []);
+
+    function handleConfirmation() {
+        () => localStorage.clear()
+        setTimeout(() => {
+            navigate('/')
+        }, 10000)
+    }
 
     return (
         <div className="stepcard_container media_mobile">
@@ -92,11 +102,10 @@ const FinishCard = ({ getItem }: Props) => {
                 </>
 
             </div>
-
             <nav className="nav_rest_pages">
                 <Link to={`${finish.back}`}>{finish.back ? "Go Back" : ""}</Link>
                 <Link to={`${finish.nextStep}`} className="btn"
-                    onClick={() => localStorage.clear()}
+                    onClick={handleConfirmation}
                 >Confirm</Link>
             </nav>
         </div>

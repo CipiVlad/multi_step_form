@@ -11,13 +11,7 @@ const Finish = () => {
         <>
             <div className="spacer"></div>
 
-            <SideBar
-            // title={finish.title}
-            // subtitle={finish.subtitle}
-            // plan={finish.plan}
-            // total={finish.total}
-            // button={finish.button}
-            />
+            <SideBar />
 
             <FinishCard
                 title={finish.title}
