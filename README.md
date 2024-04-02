@@ -192,7 +192,7 @@ Keep working on:
 - my css skills (using multiple classes in one html element, slectors...)
 - testing with Jest
 - my clean code skills
-- next projects workflow: maybe finish css first and then move on to react + ts. Was kinda jumping too much back and forth.
+- next projects workflow: maybe finish css first and then move on to react + ts.
 - asking community for help
 
 ### Useful resources
