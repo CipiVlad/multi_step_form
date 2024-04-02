@@ -50,7 +50,6 @@ Users should be able to:
 - [React](https://react.dev/) - JS library
 - [React Router](https://reactrouter.com/) - React routing library
 - [Typescript](https://www.typescriptlang.org/) - JS Superset
-- [Jest](https://jestjs.io/) - JS Testing Framework
 - [SCSS](https://sass-lang.com/) - CSS superset 
 - Flexbox & Grid [[css-tricks](https://css-tricks.com/)]
 - DevTools: [React Context](https://github.com/deeppatel234/react-context-devtool), [React DevTools](https://github.com/facebook)
@@ -85,6 +84,7 @@ I really enjoyed getting my styles done with [sass variables](https://sass-lang.
 
 #### Snippets
 
+#### scss
 ```css
 input[type="checkbox"]:not(:checked) {
         appearance: none;
@@ -109,6 +109,8 @@ input[type="checkbox"]:not(:checked) {
         font-size: 0.9em;
     }
 ```
+
+#### ts
 ```tsx
 //localStorage and useContext 
 export const StorageContext = React.createContext<StorageContextValue>([() => { }, () => { }]);
@@ -190,7 +192,7 @@ Keep working on:
 - maybe should handle forms with [react-hook-form](https://www.react-hook-form.com/get-started/#TypeScript)
 - Typescript and the "proper" way of including it into React
 - my css skills (using multiple classes in one html element, slectors...)
-- testing with Jest
+- unit testing with react-testing and Jest
 - my clean code skills
 - next projects workflow: maybe finish css first and then move on to react + ts.
 - asking community for help
