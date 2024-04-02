@@ -1,8 +1,8 @@
-import SideBar from "../components/SideBar"
 import '../components/SideBar.scss'
-import { personalInfo } from "../data/personalInfo.module"
+import SideBar from "../components/SideBar"
 import PersonalInfoCard from "../components/page_cards/PersonalInfoCard"
-import { useContext, useEffect, useState } from "react"
+import { personalInfo } from "../data/personalInfo.module"
+import { useContext } from "react"
 import { StorageContext } from "../contexts/StorageProvider"
 
 const PersonalInfo = () => {
@@ -14,10 +14,13 @@ const PersonalInfo = () => {
             <SideBar />
 
             <PersonalInfoCard
-                title={personalInfo?.title}
-                subtitle={personalInfo?.subtitle}
-                nextStep={personalInfo?.nextStep}
-                back={personalInfo?.back}
+                title={personalInfo.title}
+                subtitle={personalInfo.subtitle}
+                name={personalInfo.name}
+                email={personalInfo.email}
+                phone={personalInfo.phone}
+                nextStep={personalInfo.nextStep}
+                back={personalInfo.back}
                 setItem={setItem}
                 getItem={getItem}
 

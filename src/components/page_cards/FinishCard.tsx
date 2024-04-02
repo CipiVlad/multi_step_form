@@ -22,11 +22,8 @@ const FinishCard = ({ getItem, setItem }: Props) => {
     const [plan, setPlan] = useState({})
     const [addon, setAddon] = useState([])
 
-
     //for rendering the price in monthly or yearly
     const planType = plan.price?.includes("mo") ? "Monthly" : "Yearly";
-
-
 
     //for rendering price extended with mo or yr
     const planPriceType = plan.price?.includes("mo") ? "mo" : "yr";
@@ -60,8 +57,6 @@ const FinishCard = ({ getItem, setItem }: Props) => {
         setPlan(getItem("plan"))
         setAddon(getItem("addon"))
     }, []);
-
-
 
     return (
         <div className="stepcard_container media_mobile">
@@ -104,7 +99,7 @@ const FinishCard = ({ getItem, setItem }: Props) => {
             <nav className="nav_rest_pages">
                 <Link to={`${finish.back}`}>{finish.back ? "Go Back" : ""}</Link>
                 <Link to={`${finish.nextStep}`} className="btn"
-
+                    onClick={() => localStorage.clear()}
                 >Confirm</Link>
             </nav>
         </div>

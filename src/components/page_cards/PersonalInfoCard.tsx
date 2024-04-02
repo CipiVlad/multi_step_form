@@ -1,16 +1,18 @@
 import { Link, useNavigate } from "react-router-dom"
 import './PersonalInfoCard.scss'
 import { useEffect, useState } from "react"
-
 type Props = {
     title: string
     subtitle: string
+    name: string
+    email: string
+    phone: string
     nextStep: string
     back: boolean
     setItem: any
 }
 
-const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem }: Props) => {
+const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, name, email, phone }: Props) => {
     const [inputs, setInputs] = useState({ name: '', email: '', phone: '' });
     const navigate = useNavigate()
 
@@ -21,6 +23,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem }: Props) =
         if (inputs && inputs.name && inputs.email && inputs.phone) {
             try {
                 setItem(inputs, "person");
+
                 navigate(nextStep)
             } catch (error) {
 
@@ -49,19 +52,18 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem }: Props) =
                         <p className="subtitle">{subtitle}</p>
                     </div>
                     <form className="form" onSubmit={handleSubmit}>
-                        <label htmlFor="name">Name
-                        </label>
+                        <label htmlFor="name">{name}</label>
                         <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
                             id="name" placeholder="e.g. Stephen King" required
                         />
                         <span></span>
 
-                        <label htmlFor="email">Email Address</label>
+                        <label htmlFor="email">{email}</label>
                         <input type="email" name="email" value={inputs.email || ""} onChange={handleChange}
                             id="email" placeholder="e.g. stephenking@lorem" required />
                         <span></span>
 
-                        <label htmlFor="phone">Phone Number</label>
+                        <label htmlFor="phone">{phone}</label>
                         <input type="tel" name="phone" value={inputs.phone || ""} onChange={handleChange}
                             id="phone" placeholder="e.g. +1 234 567 890" required />
                         <span></span>

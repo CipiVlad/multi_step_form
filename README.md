@@ -1,56 +1,12 @@
-# 
-
-# Tech - Stack
-vscode, React + TS, SCSS, git, browser local Storage,jest testing
-npm: react-router-dom, sass, sass-loader
-Browsers: Brave, Google Chrome 
-
-# App Design
-* folder structure
--src
-    |
-    -pages
-    |_ PersonalInfo
-    |_ SelectPlan
-    |_ AddOns
-    |_ Finish
-
-    -components
-    |_ SideBar
-    |_ NavBar
-        fetch data to provide logic:
-        --> on Page: PersonalInfo, NavBar displays: <button>Next Step</button>
-        --> on Page: SelectPlan, NavBar displays: <button>Next Step</button>
-        <Link to={navigation(-1)}>
-        ...
-
-    |_ StepCardContainer 
-        --> fetch required data on each Side 
-        --> if(page1){display in h2(data:{
-            "Personal Info"
-            ...
-        })}
-        --> this container centers the changing data
-        --> inside of this container it depends what will  be displayed
-
-    -assests
-        |_fonts
-        |_images
-    -data
-        |_modules
-    -sass
-        |_ _variables.scss
-
-
 # Frontend Mentor - Multi-step form solution
 
-This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). 
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [The challenge](#the-challenge)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -61,6 +17,10 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
+
+### Screenshot
+
+![mobile_and_desktop_version](./src/assets/screenshots/personal_info_desktop.png)
 
 ### The challenge
 
@@ -76,78 +36,173 @@ Users should be able to:
   - The email address is not formatted correctly
   - A step is submitted, but no selection has been made
 
-### Screenshot
-
-![mobile_and_desktop_version](./src/assets/screenshots/personal_info_desktop.png)
-
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [vite](https://vitejs.dev/) -  build tool 
+- [React](https://react.dev/) - JS library
+- [React Router](https://reactrouter.com/) - React routing library
+- [Typescript](https://www.typescriptlang.org/) - JS Superset
+- [Jest](https://jestjs.io/) - JS Testing Framework
+- [SCSS](https://sass-lang.com/) - CSS superset 
+- Flexbox & Grid [[css-tricks](https://css-tricks.com/)]
+- DevTools: [React Context](https://github.com/deeppatel234/react-context-devtool), [React DevTools](https://github.com/facebook)
+- Browser: Brave(Version 1.64.113 Chromium: 123.0.6312.86 (Official Build) (64-bit)) and Google Chrome (Version 123.0.6312.86 (Official Build) (64-bit))
+- git and github
+- [figma](https://www.figma.com/)
+- deploy: [Netlify](https://www.netlify.com/)
+- desktop-first workflow
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### My Highlights
+##### localStorage and useContext()
+I decided to combine "localStorage" with the "useContext - Hook" for user input storage. Simply because 'till now I either worked with [JSON-Server](https://www.npmjs.com/package/json-server) or [MongoDB](https://www.mongodb.com/). Since I haven't used localStorage for a while now, I thought it'd be a great chance for this project. Then I added the useContext - Hook for sharing the input data between the routes and passing it either forward towards the finishing site, or for going back and updating data. You can look up the browser dev tools "application" for what has been stored inside Local storage. This also hepled me for dev - purposes, so that there's no need to uncommend the required fields of the first page when jumping back to it.
+For the localStorage my idea was to store a the input of each route inside a key:value pair. As the snippet shows: 
 
-To see how you can add code snippets, see below:
+I made the personInfo param optional, as it's not mandatory for the context inside this app, and since it's not relevant to be rendered on the finishing site. But as for planInfo and addon it's vice versa. What I also learned here: required parameters must come before optional parameters! 
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+The setItem - function basically says:     
+         * take an item (input), planInfo, addon and personInfo.
+         * store input in localStorage with a key that is either the personInfo, the planInfo or the addon,
+         * which ever is not null or undefined.
+         * If none of these values exist an error is thrown, because an item needs a key to be stored.
+         * If there's an error an error message is logged to the console.
+         * If everything went smoothly the item is stored in localStorage as a JSON string.
+
+After submitting the chosen plan, you can clear the local storage with "onClick(()=>localStorage.clear())".
+
+##### css and sass
+I really enjoyed getting my styles done with [sass variables](https://sass-lang.com/documentation/variables/). 
+
+
+#### Snippets
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+input[type="checkbox"]:not(:checked) {
+        appearance: none;
+        border: 1px solid $neutralLightGray;
+    }
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+    label p:nth-child(1) {
+        color: $primaryMarineBlue;
+        font-weight: 500;
+    }
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+    label p:nth-child(2) {
+        color: $neutralCoolGray;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+
+    .price p {
+        color: $primaryPurplishBlue;
+        font-weight: 400;
+        font-size: 0.9em;
+    }
+```
+```tsx
+//localStorage and useContext 
+export const StorageContext = React.createContext<StorageContextValue>([() => { }, () => { }]);
+
+const StorageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const setItem = (item: string, planInfo: string, addon: string | null, personInfo?: string | null) => {
+        try {
+            if (!personInfo && !planInfo && !addon) {
+                throw new Error("Must provide a storage key");
+            }
+            localStorage.setItem((personInfo || planInfo || addon)!, JSON.stringify(item));
+        } catch (error) {
+            console.error("Error setting localStorage item:", error);
+        }
+    };
+
+    const getItem = (personInfo?: string, planInfo?: string, addon?: string) => {
+        try {
+            const item = localStorage.getItem((personInfo || planInfo || addon));
+            return item ? JSON.parse(item) : null;
+        } catch (error) {
+            console.error("Error getting localStorage item:", error);
+            return null;
+        }
+    };
+
+
+    return (
+        <StorageContext.Provider value={[setItem, getItem]}>
+            {children}
+        </StorageContext.Provider>
+    );
+};
+
+//adding media query style with help of useLocation and ternary operator
+function App() {
+
+  const style = {
+
+    // Adding media query..
+    '@media (maxWidth: 375px)': {
+      height: '100vh',
+    },
+  };
+
+  const { pathname } = useLocation()
+
+  const [addProps, setAddProps] = useState(false)
+  const [height, setHeight] = useState(style)
+
+  //helper function
+
+  useEffect(() => {
+    if (pathname === "/thank-you") {
+      setAddProps(true)
+    } else {
+      setAddProps(false)
+    }
+  }, [pathname])
+
+
+  return (
+    <StorageProvider>
+      <div className="App">
+        <div className="frame_container"
+          //if thank you page is active then set height to 100vh but only for mobile
+          style={pathname === "/thank-you" && window.innerWidth < 768 ? { height: '100vh' } : height}
+        >
+
+    ...
+    
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Keep working on:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- the common React - Hooks
+- maybe should handle forms with [react-hook-form](https://www.react-hook-form.com/get-started/#TypeScript)
+- Typescript and the "proper" way of including it into React
+- my css skills (using multiple classes in one html element, slectors...)
+- testing with Jest
+- my clean code skills
+- next projects workflow: maybe finish css first and then move on to react + ts. Was kinda jumping too much back and forth.
+- asking community for help
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [geeks4geeks](https://www.geeksforgeeks.org/how-to-setup-404-page-in-react-routing/) - This helped me for handling a 404 - Page with react router. I really liked this pattern and will use it going forward.
+- [w3schools - css toggle switch](https://www.w3schools.com/howto/howto_css_switch.asp)- This is an amazing article which helped me with the toggle switch. I'd recommend it to anyone.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Portfolio](https://cipivlad.github.io/myportfoliosite/)
+- Frontend Mentor - [@CipiVlad](https://www.frontendmentor.io/profile/yourusername)
+- DEV.to - [https://dev.to/cipivlad](https://www.twitter.com/yourusername)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

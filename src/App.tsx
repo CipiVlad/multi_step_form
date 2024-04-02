@@ -8,6 +8,7 @@ import Finish from './pages/Finish'
 import ThankYou from './pages/ThankYou'
 import StorageProvider from './contexts/StorageProvider'
 import { useEffect, useState } from 'react'
+import PageNotFound from './components/page_cards/PageNotFound'
 
 
 
@@ -51,6 +52,7 @@ function App() {
               <Route path="/add-ons" element={<AddOns />} />
               <Route path="/finish" element={<Finish />} />
               <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </div>
         </div>
