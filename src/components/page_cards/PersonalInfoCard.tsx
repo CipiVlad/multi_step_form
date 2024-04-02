@@ -8,12 +8,12 @@ type Props = {
     nextStep: string
     back: boolean
     setItem: any
-    getItem: any
 }
 
-const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }: Props) => {
+const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem }: Props) => {
     const [inputs, setInputs] = useState({ name: '', email: '', phone: '' });
     const navigate = useNavigate()
+
     const handleChange = ({ target: { name, value } }: { target: { name: string, value: string } }) => setInputs(inputs => ({ ...inputs, [name]: value }));
 
     const handleSubmit = (event: { preventDefault: () => void; }) => {
@@ -21,13 +21,12 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, getItem }:
         if (inputs && inputs.name && inputs.email && inputs.phone) {
             try {
                 setItem(inputs, "person");
-
+                navigate(nextStep)
             } catch (error) {
+
                 console.error("Error setting localStorage:", error);
             }
         }
-
-        navigate(nextStep)
     };
 
     //persist storage in localstorage on page reload, and get it from localstorage to display it on page 
