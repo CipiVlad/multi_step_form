@@ -14,7 +14,7 @@ import PageNotFound from './components/page_cards/PageNotFound'
 
 function App() {
 
-  const style = {
+  const style: any = {
 
     // Adding media query..
     '@media (maxWidth: 375px)': {
@@ -41,10 +41,7 @@ function App() {
   return (
     <StorageProvider>
       <div className="App">
-        <div className="frame_container"
-          //if thank you page is active then set height to 100vh but only for mobile
-          style={pathname === "/thank-you" && window.innerWidth < 768 ? { height: '100vh' } : height}
-        >
+        <div className="frame_container" style={pathname === "/thank-you" && window.innerWidth < 768 ? { height: '100vh' } : height}>
           <div className="main_container">
             <Routes>
               <Route path="/" element={<PersonalInfo />} />

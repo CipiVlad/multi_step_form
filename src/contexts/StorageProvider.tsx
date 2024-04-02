@@ -10,7 +10,7 @@ type StorageContextValue = [setItem: (item: string) => void, getItem: () => void
 export const StorageContext = React.createContext<StorageContextValue>([() => { }, () => { }]);
 
 const StorageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const setItem = (item: string, planInfo: string, addon: string | null, personInfo?: string | null,) => {
+    const setItem = (item: string, planInfo: string, addon?: string | null, personInfo?: string | null,) => {
         try {
             if (!personInfo && !planInfo && !addon) {
                 throw new Error("Must provide a storage key");

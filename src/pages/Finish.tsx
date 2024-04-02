@@ -5,18 +5,18 @@ import { finish } from "../data/finish.module"
 import { StorageContext } from "../contexts/StorageProvider"
 const Finish = () => {
 
-    const [setItem, getItem] = useContext(StorageContext) || []
+    const [setItem, getItem] = useContext(StorageContext) || [];
 
     return (
         <>
             <div className="spacer"></div>
 
             <SideBar
-                title={finish.title}
-                subtitle={finish.subtitle}
-                plan={finish.plan}
-                total={finish.total}
-                button={finish.button}
+            // title={finish.title}
+            // subtitle={finish.subtitle}
+            // plan={finish.plan}
+            // total={finish.total}
+            // button={finish.button}
             />
 
             <FinishCard

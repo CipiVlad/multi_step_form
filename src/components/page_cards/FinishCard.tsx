@@ -7,10 +7,6 @@ type Props = {
 
     title: string,
     subtitle: string,
-    add_ons: string[] | boolean[]
-    name: string
-    description: string
-    price: string[]
     nextStep: string
     back: string
     changePlan: string
@@ -18,12 +14,13 @@ type Props = {
     setItem: any
 }
 
-const FinishCard = ({ getItem, setItem }: Props) => {
-    const [plan, setPlan] = useState({})
-    const [addon, setAddon] = useState([])
+const FinishCard = ({ getItem }: Props) => {
+    const [plan, setPlan] = useState({} || getItem)
+    const [addon, setAddon] = useState({} || getItem)
 
     //for rendering the price in monthly or yearly
     const planType = plan.price?.includes("mo") ? "Monthly" : "Yearly";
+
 
     //for rendering price extended with mo or yr
     const planPriceType = plan.price?.includes("mo") ? "mo" : "yr";
@@ -44,7 +41,7 @@ const FinishCard = ({ getItem, setItem }: Props) => {
      * 5) The final sum is assigned to the addOnPrice variable.
 
     */
-    const addOnPrice = addon.price?.map((price, index) => {
+    const addOnPrice = addon.price?.map((price: string, index: number) => {
         return Number(price.replace(/[^\d.-]/g, ''))
     }).reduce((a: number, b: number) => a + b, 0);
 
@@ -77,7 +74,7 @@ const FinishCard = ({ getItem, setItem }: Props) => {
                 <div className="line"></div>
 
                 {
-                    addon.name?.map((element, index) => (
+                    addon.name?.map((element: string, index: number) => (
                         <div className="summary_addons" key={index}>
                             <>
                                 <p key={index}>{element} <br /></p>

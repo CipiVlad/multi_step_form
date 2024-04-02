@@ -22,7 +22,7 @@ const PersonalInfo = () => {
                 nextStep={personalInfo.nextStep}
                 back={personalInfo.back}
                 setItem={setItem}
-                getItem={getItem}
+            // getItem={getItem}
 
             />
         </>
