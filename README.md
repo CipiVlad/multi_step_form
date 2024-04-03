@@ -53,7 +53,7 @@ Users should be able to:
 - [SCSS](https://sass-lang.com/) - CSS superset 
 - Flexbox & Grid [[css-tricks](https://css-tricks.com/)]
 - DevTools: [React Context](https://github.com/deeppatel234/react-context-devtool), [React DevTools](https://github.com/facebook)
-- Browser: Brave(Version 1.64.113 Chromium: 123.0.6312.86 (Official Build) (64-bit)) and Google Chrome (Version 123.0.6312.86 (Official Build) (64-bit))
+- Browser: Google Chrome (Version 123.0.6312.86 (Official Build) (64-bit), Brave(Version 1.64.113 Chromium: 123.0.6312.86 (Official Build) (64-bit)), ChromiumP Version 123.0.6312.105 (Official Build) Arch Linux (64-bit)
 - git and github
 - [figma](https://www.figma.com/)
 - deploy: [Netlify](https://www.netlify.com/)
@@ -148,39 +148,37 @@ const StorageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) 
 //adding media query style with help of useLocation and ternary operator
 function App() {
 
-  const style = {
+  const style: any = {
 
     // Adding media query..
     '@media (maxWidth: 375px)': {
       height: '100vh',
     },
   };
-
   const { pathname } = useLocation()
-
-  const [addProps, setAddProps] = useState(false)
   const [height, setHeight] = useState(style)
-
-  //helper function
-
-  useEffect(() => {
-    if (pathname === "/thank-you") {
-      setAddProps(true)
-    } else {
-      setAddProps(false)
-    }
-  }, [pathname])
-
 
   return (
     <StorageProvider>
       <div className="App">
-        <div className="frame_container"
-          //if thank you page is active then set height to 100vh but only for mobile
-          style={pathname === "/thank-you" && window.innerWidth < 768 ? { height: '100vh' } : height}
-        >
+        <div className="frame_container" style={pathname === "/thank-you" && window.innerWidth < 768 ? { height: '100vh' } : height}>
+          <div className="main_container">
+            <Routes>
+              <Route path="/" element={<PersonalInfo />} />
+              <Route path="/select-plan" element={<SelectPlan />} />
+              <Route path="/add-ons" element={<AddOns />} />
+              <Route path="/finish" element={<Finish />} />
+              <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </StorageProvider >
+  )
+}
 
-    ...
+export default App
     
 ```
 

@@ -18,6 +18,14 @@
             font-weight: 700;
         }
 
+        a {
+            color: $neutralCoolGray;
+        }
+
+        a:active {
+            color: $primaryPurplishBlue;
+        }
+
     }
 
     .line {
