@@ -40,7 +40,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL here](https://your-solution-url.com)
-- Live Site URL: [netlify](https://www.multistep-fm-challenge.netlify.app)
+- Live Site URL: [netlify](https://multistep-fm-challenge.netlify.app/)
 
 ## My process
 
