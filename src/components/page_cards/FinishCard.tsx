@@ -3,8 +3,7 @@ import { finish } from "../../data/finish.module"
 import './FinishCard.scss'
 import { useEffect, useState } from "react"
 
-type Props = {
-
+type FinishCardProps = {
     title: string,
     subtitle: string,
     nextStep: string
@@ -14,9 +13,11 @@ type Props = {
     setItem: any
 }
 
-const FinishCard = ({ getItem }: Props) => {
+const FinishCard = ({ getItem }: FinishCardProps) => {
     const [plan, setPlan] = useState({} || getItem)
     const [addon, setAddon] = useState({} || getItem)
+    console.log(getItem("addon"));
+
 
     //for rendering the price in monthly or yearly
     const planType = plan.price?.includes("mo") ? "Monthly" : "Yearly";

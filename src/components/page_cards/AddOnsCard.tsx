@@ -18,7 +18,7 @@ const AddOnsCard = ({ title, subtitle, add_ons, nextStep, back, setItem, getItem
     const [addon, setAddon] = useState<string[]>([]);
     const [addonTitle, setAddonTitle] = useState<string[]>([]);
     const [sum, setSum] = useState([{}])
-    const [priceType, setPriceType] = useState('')
+    const [priceType, setPriceType] = useState<string>('')
 
     useEffect(() => {
         setApi(add_ons)
