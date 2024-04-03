@@ -3,11 +3,11 @@ import '../components/SideBar.scss'
 import { selectPlan } from "../data/selectPlan.module"
 import SelectPlanCard from "../components/page_cards/SelectPlanCard"
 import { StorageContext } from "../contexts/StorageProvider"
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 
 
 const SelectPlan = () => {
-    const [setItem, getItem] = useContext(StorageContext) || [];
+    const [setItem] = useContext(StorageContext) || [];
     return (
         <>
             <div className="spacer"></div>
@@ -25,7 +25,6 @@ const SelectPlan = () => {
                 back={selectPlan.back}
                 icons={selectPlan.icons}
                 setItem={setItem}
-                getItem={getItem}
             />
 
         </>

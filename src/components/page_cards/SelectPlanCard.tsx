@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './SelectPlanCard.scss'
 
-type Props = {
+type SelectPlanCardProps = {
     title: string
     subtitle: string
     nextStep: string
@@ -13,11 +13,9 @@ type Props = {
     planYearly: any
     icons: any
     setItem: any
-    getItem: any
-
 }
 
-const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons, setItem, getItem }: Props) => {
+const SelectPlanCard = ({ title, subtitle, planMonthly, planYearly, monthly, yearly, nextStep, back, icons, setItem }: SelectPlanCardProps) => {
     const [activeIndex, setActiveIndex] = useState(null || 0);
     const [togglePlan, setTogglePlan] = useState(true);
     const [chosenPlan, setChosenPlan] = useState({});

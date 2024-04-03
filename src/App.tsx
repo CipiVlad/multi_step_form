@@ -12,7 +12,7 @@ import PageNotFound from './components/page_cards/PageNotFound'
 
 function App() {
 
-  const style: any = {
+  const mediaStyleFrameContainer: any = {
 
     // Adding media query..
     '@media (maxWidth: 375px)': {
@@ -20,7 +20,7 @@ function App() {
     },
   };
   const { pathname } = useLocation()
-  const [height, setHeight] = useState(style)
+  const [height, setHeight] = useState(mediaStyleFrameContainer)
 
   return (
     <StorageProvider>
