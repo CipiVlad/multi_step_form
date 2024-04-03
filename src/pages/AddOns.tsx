@@ -20,7 +20,6 @@ const AddOns = () => {
                 setItem={setItem}
                 getItem={getItem}
             />
-
         </>)
 }
 export default AddOns
