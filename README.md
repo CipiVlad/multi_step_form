@@ -64,7 +64,7 @@ Users should be able to:
 #### My Highlights
 ##### localStorage and useContext()
 I decided to combine "localStorage" with the "useContext - Hook" for user input storage. Simply because 'till now I either worked with [JSON-Server](https://www.npmjs.com/package/json-server) or [MongoDB](https://www.mongodb.com/). Since I haven't used localStorage for a while now, I thought it'd be a great chance for this project. Then I added the useContext - Hook for sharing the input data between the routes and passing it either forward towards the finishing site, or for going back and updating data. You can look up the browser dev tools "application" for what has been stored inside Local storage. This also hepled me for dev - purposes, so that there's no need to uncommend the required fields of the first page when jumping back to it.
-For the localStorage my idea was to store a the input of each route inside a key:value pair. As the snippet shows: 
+For the localStorage my idea was to store the input of each route inside a key:value pair. As the snippet shows: 
 
 I made the personInfo param optional, as it's not mandatory for the context inside this app, and since it's not relevant to be rendered on the finishing site. But as for planInfo and addon it's vice versa. What I also learned here: required parameters must come before optional parameters! 
 
