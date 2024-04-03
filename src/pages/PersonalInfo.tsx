@@ -16,14 +16,11 @@ const PersonalInfo = () => {
             <PersonalInfoCard
                 title={personalInfo.title}
                 subtitle={personalInfo.subtitle}
-                name={personalInfo.name}
+                labelName={personalInfo.labelName}
                 email={personalInfo.email}
                 phone={personalInfo.phone}
                 nextStep={personalInfo.nextStep}
-                back={personalInfo.back}
                 setItem={setItem}
-            // getItem={getItem}
-
             />
         </>
     )

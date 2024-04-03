@@ -1,7 +1,7 @@
 type PersonalInfoProps = {
     title: string;
     subtitle: string;
-    name: string;
+    labelName: string;
     email: string;
     phone: string;
     nextStep: string;
@@ -11,7 +11,7 @@ type PersonalInfoProps = {
 export const personalInfo: PersonalInfoProps = {
     "title": "Personal info",
     "subtitle": "Please provide your name, email address, and phone number.",
-    "name": "Name",
+    "labelName": "Name",
     "email": "Email Address",
     "phone": "Phone Number",
     "nextStep": "/select-plan",

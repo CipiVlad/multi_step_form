@@ -1,19 +1,18 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import './PersonalInfoCard.scss'
 import { useEffect, useState } from "react"
 
-type Props = {
+type PersonalInfoProps = {
     title: string
     subtitle: string
-    name: string
+    labelName: string
     email: string
     phone: string
     nextStep: string
-    back: boolean
     setItem: any
 }
 
-const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, name, email, phone }: Props) => {
+const PersonalInfoCard = ({ title, subtitle, nextStep, setItem, labelName, email, phone }: PersonalInfoProps) => {
     const [inputs, setInputs] = useState({ name: '', email: '', phone: '' });
     const navigate = useNavigate()
 
@@ -33,7 +32,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, name, emai
         }
     };
 
-    //persist storage in localstorage on page reload, and get it from localstorage to display it on page 
+    //persist storage in localstorage on page reload
     useEffect(() => {
         if (localStorage.person) {
             try {
@@ -53,7 +52,7 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, back, setItem, name, emai
                         <p className="subtitle">{subtitle}</p>
                     </div>
                     <form className="form" onSubmit={handleSubmit}>
-                        <label htmlFor="name">{name}</label>
+                        <label htmlFor="labelName">{labelName}</label>
                         <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
                             id="name" placeholder="e.g. Stephen King" required
                         />
