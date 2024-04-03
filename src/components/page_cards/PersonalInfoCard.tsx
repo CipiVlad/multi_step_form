@@ -53,19 +53,19 @@ const PersonalInfoCard = ({ title, subtitle, nextStep, setItem, labelName, email
                     </div>
                     <form className="form" onSubmit={handleSubmit}>
                         <label htmlFor="labelName">{labelName}</label>
-                        <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}
-                            id="name" placeholder="e.g. Stephen King" required
+                        <input type="text" name="name" value={inputs.name} onChange={handleChange}
+                            id="name" placeholder="e.g. Stephen King" required={true}
                         />
                         <span></span>
 
                         <label htmlFor="email">{email}</label>
-                        <input type="email" name="email" value={inputs.email || ""} onChange={handleChange}
-                            id="email" placeholder="e.g. stephenking@lorem" required />
+                        <input type="email" name="email" value={inputs.email} onChange={handleChange}
+                            id="email" placeholder="e.g. stephenking@lorem" required={true} />
                         <span></span>
 
                         <label htmlFor="phone">{phone}</label>
-                        <input type="tel" name="phone" value={inputs.phone || ""} onChange={handleChange}
-                            id="phone" placeholder="e.g. +1 234 567 890" required />
+                        <input type="tel" name="phone" value={inputs.phone} onChange={handleChange}
+                            id="phone" placeholder="e.g. +1 234 567 890" required={true} />
                         <span></span>
 
                         <nav className="nav_firstpage">
