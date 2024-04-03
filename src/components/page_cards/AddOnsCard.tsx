@@ -6,9 +6,9 @@ type Props = {
     title: string,
     subtitle: string,
     add_ons: any
-    name: string
-    description: string
-    price: string[]
+    // name: string
+    // description: string
+    // price: string[]
     nextStep: string
     back: string
     setItem: any
