@@ -21,6 +21,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 ### Screenshot
 
 ![mobile_and_desktop_version](./src/assets/screenshot/multiform_webapp.png)
+![frontendmentor solution](./src/assets/screenshot/frontendmenor_screenshot.png)
 
 ### The challenge
 
