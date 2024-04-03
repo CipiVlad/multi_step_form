@@ -205,8 +205,8 @@ Keep working on:
 ## Author
 
 - Website - [Portfolio](https://cipivlad.github.io/myportfoliosite/)
-- Frontend Mentor - [@CipiVlad](https://www.frontendmentor.io/profile/yourusername)
-- DEV.to - [https://dev.to/cipivlad](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@CipiVlad](https://www.frontendmentor.io/profile/CipiVlad)
+- DEV.to - [https://dev.to/cipivlad](https://www.dev.to/CipiVlad)
 
 ### Tags
 - #react, #typescript, #scss, #vite, #github, #git, #form, #react-router, #jest
