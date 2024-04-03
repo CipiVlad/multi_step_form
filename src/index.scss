@@ -6,7 +6,6 @@
     box-sizing: border-box;
     max-width: 100%;
     overflow: hidden;
-    // max-width: 1440px;
     font-family: $fontFamily;
 }
 
@@ -19,7 +18,7 @@ p {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: $neutralAlabaster;
+    background-color: $primaryLightBlue;
 
     @media screen and (max-width: $layoutLenovo) {
         .frame_container {
